@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://zyx006.github.io</id>
+    <title>君绾墨のblog</title>
+    <updated>2021-01-02T09:15:36.896Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://zyx006.github.io"/>
+    <link rel="self" href="https://zyx006.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://zyx006.github.io/images/avatar.png</logo>
+    <icon>https://zyx006.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, 君绾墨のblog</rights>
+</feed>
