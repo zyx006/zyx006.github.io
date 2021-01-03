@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zyx006.github.io</id>
     <title>君绾墨的blog</title>
-    <updated>2021-01-03T08:06:21.254Z</updated>
+    <updated>2021-01-03T08:14:51.351Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zyx006.github.io"/>
     <link rel="self" href="https://zyx006.github.io/atom.xml"/>
@@ -10,113 +10,4 @@
     <logo>https://zyx006.github.io/images/avatar.png</logo>
     <icon>https://zyx006.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 君绾墨的blog</rights>
-    <entry>
-        <title type="html"><![CDATA[Mac键盘符号和快捷键说明]]></title>
-        <id>https://zyx006.github.io/post/mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming/</id>
-        <link href="https://zyx006.github.io/post/mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming/">
-        </link>
-        <updated>2020-11-14T09:41:52.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>本文迁移于原生Github Pages</p>
-</blockquote>
-<p>⌘  Command<br>
-⇧  Shift<br>
-⇪  CapsLock<br>
-⌥  Option<br>
-⌃  Control</p>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>本文迁移于原生Github Pages</p>
-</blockquote>
-<p>⌘  Command<br>
-⇧  Shift<br>
-⇪  CapsLock<br>
-⌥  Option<br>
-⌃  Control</p>
-<!-- more -->
-<p>↩  Return/Enter<br>
-⌫  Delete<br>
-⌦  向前删除键(Fn + Delete)<br>
-↑  上箭头<br>
-↓  下箭头<br>
-←  左箭头<br>
-→  右箭头<br>
-⇞  PageUp(Fn + ↑)<br>
-⇟  PageDown(Fn + ↓)<br>
-Home  Fn + ←<br>
-End  Fn + →<br>
-⇥  右制表符(Tpb键)<br>
-⇤  左制表符(Shift + Tpb)<br>
-⎋  Escape(Esc)</p>
-<h2 id="searchreplace查询替换">Search/Replace(查询/替换)</h2>
-<p>Double Shift(⇧)  查询任何东西<br>
-Command(⌘) + F  文件内查找<br>
-Command(⌘) + G  查找模式下，向下查找<br>
-Command(⌘) + Shift(⇧) + G  查找模式下，向上查找<br>
-Command(⌘) + R  文件内替换<br>
-Command(⌘) + Shift(⇧) + F  全局查找(根据路径)<br>
-Command(⌘) + Shift(⇧) + R  全局替换(根据路径)<br>
-Command(⌘) + Shift(⇧) + S  查询结构(Ultimate Edition 版专用，需要在Keymap中设置)<br>
-Command(⌘) + Shift(⇧) + M  替换结构(Ultimate Edition 版专用，需要在Keymap中设置)</p>
-<h2 id="usage-search使用查询">Usage Search(使用查询)</h2>
-<p>Option(⌥) + F7 / Command(⌘) + F7  在文件中查找用法 / 在类中查找用法<br>
-Command(⌘) + Shift(⇧) + F7  在文件中突出显示的用法<br>
-Command(⌘) + Option(⌥) + F7  显示用法</p>
-<h2 id="compile-and-run编译和运行">Compile and Run(编译和运行)</h2>
-<p>Command(⌘) + F  编译Project<br>
-Command(⌘) + Shift(⇧) + F9  编译选择的文件、包或模块<br>
-Control(⌃) + Option(⌥) + R  弹出 Run 的可选择菜单<br>
-Control(⌃) + Option(⌥) + D  弹出 Debug 的可选择菜单<br>
-Control(⌃) + R  运行<br>
-Control(⌃) + D  调试<br>
-Control(⌃) + Shift(⇧) + R, Control(⌃) + Shift(⇧) + D  从编辑器运行上下文环境配置</p>
-<h2 id="通用">通用</h2>
-<p>Command(⌘) + C  复制<br>
-Command(⌘) + V  粘贴</p>
-<h3 id="剪切">   剪切</h3>
-<p>   Step 1:Command(⌘) + C  复制<br>
-   Step 2:在需要转移的文件夹位置使用Command(⌘) + Option(⌥) + V。(如果操作后悔了，还可以 Command(⌘) + Z 撤销。)</p>
-<p>Command(⌘) + A  全选<br>
-Command(⌘) + S  保存<br>
-Command(⌘) + F  查找(Find)<br>
-Command(⌘) + M  最小化窗口<br>
-Command(⌘) + N  新建文件<br>
-Command(⌘) + O  打开<br>
-Command(⌘) + H  隐藏窗口<br>
-Command(⌘) + Shift(⇧) + S  另存<br>
-Command(⌘) + W  关闭<br>
-Command(⌘) + Q  退出<br>
-Command(⌘) + Z  撤销(如果是safari浏览器，就是恢复刚关闭的页面)<br>
-Command(⌘) + Shift(⇧) + Z  重做，也就是撤销的逆向操作<br>
-Command(⌘) + Option(⌥) + Esc  强制退出程序(类似于window下的任务管理器)<br>
-自带的输入法(Capslock 短按中英文切换，长按英文大写)<br>
-Command(⌘) + Shift(⇧) + 4  截取所选屏幕区域到一个文件，或按空格键仅捕捉一个窗口<br>
-Command(⌘) + Delete  将文件移至废纸篓(Windows键盘是 Win + Backspace)<br>
-Command(⌘) + Shift(⇧) + Delete  清倒废纸篓(Windows键盘是 Win + Shift + Backspace)<br>
-Space  快速查看选中的文件，也就是预览功能<br>
-Command(⌘) + ↑  打开包含当前文件夹的文件夹，相当于Windows里的“向上”<br>
-Command(⌘) + Tab  在应用程序间切换(应用处于打开且在桌面的情况)</p>
-<h2 id="浏览器">浏览器</h2>
-<p>Command(⌘) + L  光标直接跳至地址栏(可能被Windows响应锁屏)<br>
-Command(⌘) + '+' / '='  放大页面<br>
-Command(⌘) + '-'  缩小页面<br>
-Control(⌃) + Tab  转向下一个标签页<br>
-Control(⌃) + Shift(⇧) + Tab  转向上一个标签页<br>
-Command(⌘) + R  刷新<br>
-Command(⌘) + T  新建一个选项卡<br>
-PageDown  向下滚动屏幕<br>
-PageUp  向上滚动屏幕<br>
-按下箭头键 向上、向下、向左或向右滚动<br>
-按下箭头键时按住Option(⌥)键大幅度滚动<br>
-enter即回车  重命名<br>
-Command(⌘) + 鼠标点击  多选不连续的文件或文件夹</p>
-<h2 id="其他">其他</h2>
-<p>选中多个连续的文件或文件夹<br>
-按住Shift(⇧)键不放，使用鼠标依次点击(或按住鼠标后拖动)希望选择的文件或者文件夹即可<br>
-文件可以右键重命名<br>
-如果桌面的文件不对齐排列，可以右键整理<br>
-Shift(⇧) + Command(⌘) + C  打开“电脑”窗口<br>
-文件右键有一个“制作替身”，相当于新建一个快捷方式</p>
-]]></content>
-    </entry>
 </feed>
