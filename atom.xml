@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zyx006.github.io</id>
     <title>君绾墨的blog</title>
-    <updated>2021-01-03T03:40:12.505Z</updated>
+    <updated>2021-01-03T05:06:53.230Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zyx006.github.io"/>
     <link rel="self" href="https://zyx006.github.io/atom.xml"/>
@@ -16,12 +16,19 @@
         <link href="https://zyx006.github.io/post/mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming/">
         </link>
         <updated>2020-11-14T09:41:52.000Z</updated>
+        <summary type="html"><![CDATA[<p>⌘  Command<br>
+⇧  Shift<br>
+⇪  CapsLock<br>
+⌥  Option<br>
+⌃  Control</p>
+]]></summary>
         <content type="html"><![CDATA[<p>⌘  Command<br>
 ⇧  Shift<br>
 ⇪  CapsLock<br>
 ⌥  Option<br>
-⌃  Control<br>
-↩  Return/Enter<br>
+⌃  Control</p>
+<!-- more -->
+<p>↩  Return/Enter<br>
 ⌫  Delete<br>
 ⌦  向前删除键(Fn + Delete)<br>
 ↑  上箭头<br>
@@ -97,12 +104,13 @@ PageUp  向上滚动屏幕<br>
 按下箭头键时按住Option(⌥)键大幅度滚动<br>
 enter即回车  重命名<br>
 Command(⌘) + 鼠标点击  多选不连续的文件或文件夹</p>
-<h2 id="选中多个连续的文件或文件夹">选中多个连续的文件或文件夹</h2>
-<p>按住Shift(⇧)键不放，使用鼠标依次点击(或按住鼠标后拖动)希望选择的文件或者文件夹即可</p>
-<h2 id="font-colorblack文件可以右键重命名"><font color="black">文件可以右键重命名</h2>
-<h2 id="font-colorblack如果桌面的文件不对齐排列可以右键整理"><font color="black">如果桌面的文件不对齐排列，可以右键整理</h2>
-<h2 id="font-colorblackshift-command-c-打开电脑窗口"><font color="black">Shift(⇧) + Command(⌘) + C  打开“电脑”窗口</h2>
-<h2 id="font-colorblack文件右键有一个制作替身相当于新建一个快捷方式"><font color="black">文件右键有一个“制作替身”，相当于新建一个快捷方式</h2>
+<h2 id="其他">其他</h2>
+<p>选中多个连续的文件或文件夹<br>
+按住Shift(⇧)键不放，使用鼠标依次点击(或按住鼠标后拖动)希望选择的文件或者文件夹即可<br>
+文件可以右键重命名<br>
+如果桌面的文件不对齐排列，可以右键整理<br>
+Shift(⇧) + Command(⌘) + C  打开“电脑”窗口<br>
+文件右键有一个“制作替身”，相当于新建一个快捷方式</p>
 ]]></content>
     </entry>
 </feed>

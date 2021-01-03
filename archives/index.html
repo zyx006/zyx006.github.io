@@ -1,1061 +1,1243 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://zyx006.github.io/media/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
-    <link rel="stylesheet" href="https://zyx006.github.io/styles/main.css">
-    <link rel="stylesheet" href="https://zyx006.github.io/media/css/font-awesome.css">
-    <meta name="description" content="温故而知新" />
-    <title>君绾墨的blog</title>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
+<meta name="description" content="温故而知新">
+<meta name="theme-color" content="#000">
+<title>君绾墨的blog</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1609650380657">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="/media/css/gemini.css">
+
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/androidstudio.css"
+  rel="stylesheet">
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+  <meta name="description" content="温故而知新">
 </head>
 
-
 <body>
-    <!-- 响应式布局，针对PC端内容显示 -->
-    <div id="content">
-        <div class="nav-large">
-            <div class="row">
-                <div class="side"><head>
-    <link rel="stylesheet" href="https://zyx006.github.io/media/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://zyx006.github.io/styles/main.css">
+  <div class="head-top-line"></div>
+  <div class="header-box">
     
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css">
-    
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
-    <!-- 数学公式 -->
-    
-    
-</head>
-<style>
-    body{
-    cursor: url("https://zyx006.github.io/media/images/mouse_cursor.png"),auto
-    }
-    </style>
-
-<body>
-    
-    <script>
-        let menupos = 'left'
-    </script>
-    
-    
-    <script>
-        let shareChoice = true
-    </script>
-    
-    
-    <script>
-        let donateChoice = true
-    </script>
-    
-    
-    <script>
-        let searchChoice = true
-    </script>
-    
-    <script>let postsnum = 0;</script>
-    <div id="side-posttitle" style="display: none;">
-        
-    
-    
-    
-    Mac键盘符号和快捷键说明
-    <script>postsnum += 1</script>
-    
-    
-    </div>
-    <div class="pjaxloading" onclick="pjaxloadingClose()">
-        <div class="loadingbackground"></div>
-        <div id="loading">
-            <div class="loading">
-            </div>
+<div class="gemini">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
         </div>
-    </div>
-    
-    <div id=side>
-        <a onclick="showAaplayer()"><i style="font-size: 20px;"><img
-                    src='https://zyx006.github.io/media/images/music.png' alt="音乐播放器" class="musicbtn"></i></a>
-        <div class="avatar-border">
-            <img src="https://zyx006.github.io/images/avatar.png?v=1609645200735" class="avatar">
-        </div>
-        <div class="sitename">君绾墨的blog</div>
-        <span class="describtion" data-text='["温故而知新"]'>&nbsp;</span>
-        
-        <div class="search">
-            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
-            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
-            <div class="search-results"></div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>君绾墨的blog</span>
+            </a>  
+          
         </div>
         
-    <div class="share-button">
-        <span>社交按钮</span>
+          <p class="subtitle">精于心，简于形</p>
         
-        
-        
-        
-        
-        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item nav-item-active">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about/" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友情链接
+                  
+                </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
     </div>
-    <div id="qq" style="display:none"></div>
-    
-    
-    <div class="mchocie describtion">
-        <a data-pjax href="/" class="menubutton">
-            首页
-        </a>
-    </div>
-    
-    
-    
-    <div class="mchocie describtion">
-        <a data-pjax href="/archives" class="menubutton">
-            归档
-        </a>
-    </div>
-    
-    
-    
-    <div class="mchocie describtion">
-        <a data-pjax href="/tags" class="menubutton">
-            标签
-        </a>
-    </div>
-    
-    
-    
-    <div class="mchocie describtion">
-        <a data-pjax href="/post/about" class="menubutton">
-            关于
-        </a>
-    </div>
-    
-    
-    
-    
-    <div class="mchocie describtion">
-        <a data-pjax href="https://zyx006.github.io/friends" class="menubutton">友人帐</a>
-    </div>
-    
-    <hr>
-    <style>
-    .copyright {
-        font-size: 15px;
-        color: #d9d9d9;
-    }
+  </header>
+</div>
 
+<script type="text/javascript"> 
+ 
+  let showNav = true;
 
-    @media screen and (min-width: 1200px) {
-        .foot {
-            width: 100%;
-            height: 130px;
-        }
-    }
-
-    @media screen and (max-width: 1200px) {
-        .foot {
-            display: none;
-        }
-    }
-</style>
-
-<body>
-    <div class="foot">
-        <div id="footinfo">©2021 君绾墨
-由<a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>强力驱动 | Theme: <a
-                href="https://github.com/850552586/gridea-theme-fog">Fog</a>
-            <div>
-                
-                <div id="sitegotimeDate">载入天数...</div>
-                <div id="sitegotimes">载入时分秒...</div>
-                <div id="cussitetime" style="display:none">01/01/2021</div>
-                
-            </div>
-            <div>
-                
-            </div>
-            <div class="copyright" style="color:white;text-align: center;">Copyright © 2020  备案号: 鄂ICP备...号
-            </div>
-        </div>
-
-
-
-    </div>
-</body>
-
-<script>
-    //----------------------站点运行时间
-    var now = new Date();
-
-    function createtime() {
-        var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
-        var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间 
-        now.setTime(now.getTime() + 250);
-        days = (now - grt) / 1000 / 60 / 60 / 24;
-        dnum = Math.floor(days);
-        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
-        hnum = Math.floor(hours);
-        if (String(hnum).length == 1) {
-            hnum = "0" + hnum;
-        }
-        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes);
-        if (String(mnum).length == 1) {
-            mnum = "0" + mnum;
-        }
-        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds);
-        if (String(snum).length == 1) {
-            snum = "0" + snum;
-        }
-        document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
-        document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-    }
-
-    let intervalId = setInterval("createtime()", 250);
-</script>
-
-    </div>
-
-
-    <script src="https://zyx006.github.io/media/js/wordshow.js"></script>
-    
-    
-</body>
-<script>
-    function showqq() {
-        var qq = document.getElementById("qq").innerHTML;
-        if (qq != '')
-            window.location.href = "tencent://message/?uin=" + qq + "&Site=&Menu=yes";
-        else
-            alert("博主暂未设置QQ联系方式");
-    }
-
-    //音乐播放器的显示
-    function showAaplayer() {
-        var aplayer = $(".aplayer-body");
-        if (aplayer.css("display") == 'block')
-            aplayer.fadeOut(200)
-        else
-            aplayer.fadeIn(200)
-    }
-</script>
-<script>
-    function getHotnum() {
-        //文章阅读热度（重构，利用leancloud原生api）
-        var pl = window.location.pathname;
-        if (pl.search("post") == -1)
-            return false;
-        if (pl[pl.length - 1] != '/')
-            pl += '/'
-        var ptitle = $("#ptitle").html();
-        var rootaddr = $("#rootaddr").html();
-        pl = pl.replace(rootaddr, "");
-        var appid = '';
-        var appkey = '';
-        console.log(appid, appkey)
-        if (AV == undefined)
-            AV.init({
-                appId: appid,
-                appKey: appkey
-            });
-        const query = new AV.Query('Counter');
-        query.equalTo('url', pl);
-        var time = 'Loading...';
-        query.find().then(function (results) {
-            console.log(results)
-            if (results.length == 0) {
-                console.log("0")
-                var NewCounter = AV.Object.extend('Counter');
-                var nc = new NewCounter();
-                nc.save({
-                    time: 1,
-                    title: ptitle,
-                    url: pl,
-                    xid: pl,
-                }).then(function (object) {
-                    $(".hotnum").eq(0).html(1);
-                    $(".hotnum").eq(1).html(1);
-                });
-            } else {
-                id = results[0].id;
-                var todo = AV.Object.createWithoutData('Counter', id);
-                time = results[0].attributes.time + 1;
-                todo.set("time", time);
-                todo.save();
-                console.log(todo);
-                $(".hotnum").eq(0).html(time);
-                $(".hotnum").eq(1).html(time);
-            }
-
-        }, function (error) {
-            console.log(error)
-        });
-    }
-</script>
-    <script src="https://zyx006.github.io/media/share/dist/Share.js"></script>
-    <!-- 页面pjax测试 -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.js"></script>
-    <!--确保jQuery已经在此之前加载-->
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src="https://zyx006.github.io/media/js/all-pjax.js"></script>
-    <script>
-        //loading加载关闭
-        function pjaxloadingClose() {
-            var pjaxloading = $(".pjaxloading");
-            pjaxloading.hide();
-        }
-
-
-
-        function imglazyloadinit() {
-            var img = $("img");
-            for (var i = 0; i < img.length; i++) {
-                if (img.eq(i).attr("class") == undefined) {
-                    img.eq(i).attr("class", "lazyload");
-                    var imgsrc = img.eq(i).attr("src");
-                    img.eq(i).attr("data-original", imgsrc);
-                    img.eq(i).attr("src", "");
-                    img.eq(i).hide();
-                }
-            }
-        }
-
-        function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-
-        async function codebtncolorinit(e) {
-            await sleep(2000);
-            e.trigger.innerHTML = "复制代码"
-            e.trigger.style.background = "cornflowerblue"
-        }
-
-        function codeinit() {
-            //寻找所有code标签，加复制按钮鸭！(行内代码除外)
-            var codes = document.getElementsByTagName('code');
-            if (codes.length) {
-                for (var i = 0; i < codes.length; i++) {
-                    //高度/行高=文本行数
-                    // var rowNum=Math.round(codes[i].height()/parseFloat(codes[i].css('line-height')));
-                    // console.log("当前有"+rowNum+"行");
-                    var code_id = "code_id_" + i;
-                    codes[i].setAttribute("id", code_id);
-                    var ci = "#" + code_id;
-                    var codedot = $(ci);
-                    var rowNum = Math.round(codedot.height() / parseFloat(codedot.css('line-height')));
-                    if (rowNum <= 1) continue;
-                    var btn = document.createElement("button");
-                    btn.setAttribute("class", "copybt");
-                    btn.setAttribute("data-clipboard-target", "#" + code_id);
-                    btn.innerHTML = '复制代码';
-                    codes[i].parentNode.insertBefore(btn, codes[i]);
-                }
-            };
-            var cop = new ClipboardJS('.copybt');
-            cop.on('success', function (e) {
-                e.trigger.innerHTML = "复制成功~"
-                e.trigger.style.background = "#894e54"
-                codebtncolorinit(e)
-                e.clearSelection();
-            });
-            cop.on('error', function (e) {
-                alert("矮油，复制失败了...手动复制吧勇士！");
-                e.clearSelection();
-            });
-        }
-
-        function lazyload() {
-            var oLazyload = $("img.lazyload"),
-                fLazyload = function (hLazyload) {
-                    var nLazyload = $(window).height() + $(document).scrollTop();
-                    oLazyload.each(function () {
-                        $(this).offset().top < nLazyload && ($(this).trigger("appear"), oLazyload =
-                            oLazyload.not(this));
-                    }), 0 == oLazyload.length && $(window).unbind("scroll", fLazyload);
-                };
-            oLazyload.each(function () {
-                $(this).one("appear", function () {
-                    $(this).attr("src", $(this).attr("data-original"));
-                    $(this).fadeIn(500);
-                });
-            }), $(window).bind("scroll", fLazyload), fLazyload();
-        }
-
-        let talksall = [];
-        let talks = [];
-        let talkindex = 0;
-        get();
-        function get() {
-            var t = JSON.parse('[]');
-            talkindex = t.length - 1;
-            for (var i = 0; i <= t.length - 1; i++) {
-                var d = {};
-                d["time"] = t[i].time;
-                d["author"] = t[i].author;
-                d["text"] = t[i].text;
-                d["img"] = t[i].img;
-                talksall.push(d);
-            }
-        }
-
-        function add() {
-            for (var i = talkindex; i >= 0 && i > talkindex - 3; i--) {
-                talks.push(talksall[i]);
-            }
-            talkindex = (talkindex - 3) >= 0 ? (talkindex - 3) : -1;
-            if (talkindex < 0) $("#getmorebt").hide();
-            show();
-            refreshImg("talkimg");
-        }
-
-        function show() {
-            var talkT = document.getElementById("talkContainer");
-            talkT.innerHTML = "";
-            for (var i = 0; i < talks.length; i++) {
-                if (talks[i].img != '') {
-                    talkT.innerHTML += '\
-            <div class="talk" v-for="t in talks"> \
-                <img src="' + talks[i].img + '" class="talkimg"> \
-                <div class="ainfo">\
-                    <div class="ainfo-intro">\
-                        <img class="intro1" src="https://zyx006.github.io/images/avatar.png?v=1609645200735">\
-                        <div class="author">' + talks[i].author + '</div>·\
-                        <div class="time">' + talks[i].time + '</div>\
-                    </div>\
-                </div>\
-                <div class="talkcontent">' + talks[i].text + '\
-                </div\>\
-            ';
-                } else {
-                    talkT.innerHTML += '\
-            <div class="talk" v-for="t in talks"> \
-                <div class="ainfo">\
-                    <div class="ainfo-intro">\
-                        <img class="intro1" src="https://zyx006.github.io/images/avatar.png?v=1609645200735">\
-                        <div class="author">' + talks[i].author + '</div>·\
-                        <div class="time">' + talks[i].time + '</div>\
-                    </div>\
-                </div>\
-                <div class="talkcontent">' + talks[i].text + '\
-                </div\>\
-            ';
-                }
-            }
-        }
-
-        function refreshImg(imgclass) {
-            // 获取弹窗
-            var modal = document.getElementById('myModal');
-
-            // 获取图片插入到弹窗 - 使用 "alt" 属性作为文本部分的内容
-            var img = document.getElementsByClassName(imgclass);
-            var modalImg = document.getElementById("img01");
-            var captionText = document.getElementById("caption");
-            for (var i in img) {
-                img[i].onclick = function () {
-                    modal.style.display = "block";
-                    modalImg.src = this.src;
-                }
-            }
-
-            // 图片关闭
-            var modalImg = document.getElementById('img01');
-            // 鼠标点击模型外区域关闭登录框
-            window.onclick = function (event) {
-                console.log(event.target);
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-                if (menupos == 'left')
-                    return true;
-                if (event.target == social) {
-                    social.style.display = "none";
-                }
-            }
-        }
-
-        function shareInit() {
-            var title = document.getElementById("texttitle").getElementsByTagName("h2");
-            if (menupos == 'top') {
-                var avatarSrc = $(".menutopavatar").attr("src");
-                var dp = document.getElementsByClassName("navbar-brand")[1].innerHTML;
-            }
-            else {
-                var avatarSrc = $(".avatar").attr("src");
-                var dp = document.getElementsByClassName("describtion")[0].innerHTML;
-            }
-            var share = new Share('.share', {
-                title: title[0].innerHTML,
-                initialized: true,
-                //默认获取网站描述
-                description: dp,
-                //网站图片默认获取的是设置的用户头像
-                image: avatarSrc,
-                //激活的分享网站
-                sites: ["weibo", "qq", "wechat", "douban", "qzone", "facebook", "twitter", "google"],
-                //微信分享PC端会生成二维码分享,移动端如果可以唤起微信最好
-                wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
-                wechatQrcodeHelper: '<p>微信里扫一下二维码</p><p>便可将本文分享至朋友圈。</p>',
-                //关闭的网站分享
-                disabled: ['google', 'linkedin'],
-                wechatQrcodePosition: 'bottom'
-            });
-            //点击分享按钮展现出分享icons
-            var sharebtnTag = false;
-            $(".sharebtn").click(function () {
-                if (!sharebtnTag) {
-                    $(".share").show();
-                    sharebtnTag = true;
-                }
-                else {
-                    $(".share").hide();
-                    sharebtnTag = false;
-                }
-            })
-        }
-
-        function donateInit() {
-            var donatebtnTag = false;
-            $(".donateImg").click(function () {
-                if (!donatebtnTag) {
-                    $(".donate").show();
-                    donatebtnTag = true;
-                }
-                else {
-                    $(".donate").hide();
-                    donatebtnTag = false;
-                }
-            })
-        }
-
-
-        let talkinit = false;
-        $(document).pjax('a[data-pjax]', '#main', {
-            fragment: '#main',
-            timeout: 8000
-        }).on('pjax:complete', function () {
-            //hljs.initHighlightingOnLoad();
-            document.querySelectorAll('pre code').forEach((block) => {
-                hljs.highlightBlock(block);
-            });
-            //文章热度
-            getHotnum();
-            //文章索引
-            toginit();
-            //清空搜索栏
-            if (searchChoice) {
-                searchInit();
-                searchInput.value = "";
-            }
-            var pl = window.location.pathname;
-            //说说更新
-            if (pl.search("talk") != -1 && !talkinit) {
-                add();
-                talkinit = true;
-            }
-            else if (pl.search("talk") != -1) {
-                show();
-                refreshImg("talkimg");
-            }
-            //分享按钮更新
-            if (pl.search("post") != -1) {
-                if (shareChoice)
-                    shareInit();
-                if (donateChoice)
-                    donateInit();
-                imglazyloadinit();
-                lazyload();
-                refreshImg("lazyload");
-                codeinit();
-            }
-            if (btstate == true)
-                dropdown();
-        }).on('pjax:start', function () {
-            $(".pjaxloading").fadeIn(50);
-        }).on('pjax:end', function () {
-            $(".pjaxloading").fadeOut(50);
-        });
-    </script>
-
-    <script>
-        /**
-         * https://github.com/tangkaichuan/gridea-search
-         */
-        (function () {
-            var CACHES = checkCache()
-            if (!CACHES) {
-                var NOW = Date.now()
-                var API_CONTENT = '../api-content/index.html' + '?_=' + NOW
-                preload(API_CONTENT);
-                getContents(show_getContentresult);
-            }
-
-            function show_getContentresult(data) {
-                console.log("获取成功");
-                var postslen = data["posts"].length;
-                localStorage.setItem('postsnum', postslen);
-                var poststitlelen = 0;
-                var pt = document.getElementById("side-posttitle").innerHTML;
-                pt = pt.replace(/\s+/g, '').replace(/<script>.*?<\/script>/gi, "");
-                localStorage.setItem('poststitlelen', pt.length);
-            }
-
-
-
-            // preload
-            function preload(url) {
-                var preloadLink = document.createElement('link')
-                preloadLink.href = url
-                preloadLink.rel = 'preload'
-                preloadLink.as = 'fetch'
-                preloadLink.crossOrigin = 'anonymous'
-                document.head.appendChild(preloadLink)
-            }
-
-            // 异步 GET 请求
-            function get(obj) {
-                var xhr = new XMLHttpRequest()
-                xhr.open('get', obj.url, true)
-                xhr.send(null)
-                xhr.onreadystatechange = function () {
-                    // 异步请求：响应状态为4，数据加载完毕
-                    if (xhr.readyState === 4) {
-                        if (xhr.status === 200) {
-                            obj.success(xhr.responseText)
-                        } else {
-                            obj.error(xhr.status)
-                        }
-                    }
-                }
-            }
-
-
-            // 检查缓存是否最新
-            function checkCache() {
-                var caches_postsnum = localStorage.getItem("postsnum");
-                var pt = document.getElementById("side-posttitle").innerHTML;
-                pt = pt.replace(/\s+/g, '').replace(/<script>.*?<\/script>/gi, "")
-                var ptlen = pt.length;
-                var ptlen_storage = localStorage.getItem("poststitlelen");
-                console.log(parseInt(postsnum));
-                if (caches_postsnum != postsnum || ptlen != ptlen_storage) {
-                    console.log("更新缓存");
-                    return false
-                }
-                return true;
-            }
-
-            // 获取博客全文 api
-            function getContents(callback) {
-                if (CACHES) {
-                    callback(CACHES.contents)
-                } else {
-                    get({
-                        url: API_CONTENT,
-                        success: function (data) {
-                            callback(JSON.parse(data));
-                            localStorage.setItem('ContentsCache', data);
-                        }
-                    })
-                }
-            }
-        })()
-
-        //-------------------------------------------------搜索
-        // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
-        if (searchChoice) {
-            var searchInput = document.querySelector('.search-input');
-            var searchResults = document.querySelector('.search-results');
-        }
-        // 申明保存文章的标题、链接、内容的数组变量
-        var searchValue = '',
-            arrItems = [],
-            arrLinks = [],
-            arrTitles = [],
-            arrContents = [],
-            arrResults = [],
-            indexItem = [],
-            itemLength = 0;
-        var tmpDiv = document.createElement('div');
-        tmpDiv.className = 'result-item';
-
-
-        function getStorageContent() {
-            var data = localStorage.getItem('ContentsCache');
-            data = JSON.parse(data);
-            posts = data["posts"];
-            for (var i = 0; i < posts.length; i++) {
-                arrLinks[i] = posts[i].link;
-                arrTitles[i] = posts[i].title;
-                arrContents[i] = posts[i].content;
-                itemLength++;
-            }
-        }
-        getStorageContent();
-        // 输入框内容变化后就开始匹配，可以不用点按钮
-        // 经测试，onkeydown, onchange 等方法效果不太理想，
-        // 存在输入延迟等问题，最后发现触发 input 事件最理想，
-        // 并且可以处理中文输入法拼写的变化
-        searchInput.oninput = function () {
-            setTimeout(searchConfirm, 0);
-        }
-        searchInput.onfocus = function () {
-            searchResults.style.display = 'block';
-        }
-
-        function searchConfirm() {
-            if (searchInput.value == '') {
-                searchResults.style.display = 'none';
-            } else if (searchInput.value.search(/^\s+$/) >= 0) {
-                // 检测输入值全是空白的情况
-                searchInit();
-                var itemDiv = tmpDiv.cloneNode(true);
-                itemDiv.innerText = '请输入有效内容...';
-                searchResults.appendChild(itemDiv);
-            } else {
-                // 合法输入值的情况
-                searchInit();
-                searchValue = searchInput.value;
-                // 在标题、内容中查找
-                searchMatching(arrTitles, arrContents, searchValue);
-            }
-        }
-
-        // 每次搜索完成后的初始化
-        function searchInit() {
-            arrResults = [];
-            indexItem = [];
-            searchResults.innerHTML = '';
-            searchResults.style.display = 'block';
-        }
-
-        function searchMatching(arr1, arr2, input) {
-            // 忽略输入大小写
-            input = new RegExp(input, 'i');
-            var step = 10;
-            // 在所有文章标题、内容中匹配查询值
-            for (i = 0; i < itemLength; i++) {
-                var indexContent = arr2[i].search(input);
-                //标题匹配
-                if (arr1[i].search(input) != -1) {
-                    indexItem.push(i); // 保存匹配值的索引
-                    if (indexContent != -1) {
-                        startindex = (indexContent - step) >= 0 ? (indexContent - step) : 0;
-                        var searchcontent = arr2[i].slice(indexContent - step, indexContent + 5)
-                        arrResults.push("....." + searchcontent + ".....");
-                    }
-                    else
-                        arrResults.push("");
-                }
-                //内容匹配
-                else if (indexContent != -1) {
-                    indexItem.push(i); // 保存匹配值的索引
-
-                    startindex = (indexContent - step) >= 0 ? (indexContent - step) : 0;
-                    var searchcontent = arr2[i].slice(indexContent - step, indexContent + 5)
-                    arrResults.push("....." + searchcontent + ".....");
-                }
-            }
-
-            // 输出总共匹配到的数目
-            var totalDiv = tmpDiv.cloneNode(true);
-            totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
-            searchResults.appendChild(totalDiv);
-
-            // 未匹配到内容的情况
-            if (indexItem.length == 0) {
-                var itemDiv = tmpDiv.cloneNode(true);
-                itemDiv.innerText = '未匹配到内容...';
-                searchResults.appendChild(itemDiv);
-            }
-
-            // 将所有匹配内容进行组合
-            for (i = 0; i < arrResults.length; i++) {
-                var itemDiv = tmpDiv.cloneNode(true);
-                itemDiv.innerHTML = '<a data-pjax class="searchresults" href="' + arrLinks[indexItem[i]] + '"><b>[' + arrTitles[indexItem[i]] +
-                    ']</b><p>' + arrResults[i] + '</p></a><hr />';
-                searchResults.appendChild(itemDiv);
-            }
-        }
-    </script>
-    </div>
-                
-                <div id="tab1" class="tab">
-                    <div class="bars">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="close"></div>
-                </div>
-                <div class="col-md-1 col-lg-3"></div>
-                <div class="mobilebar"><head>
-  <!-- 引入Bootstrap核心样式文件 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/bootstrap.min.css">
-</head>
-<style>
-  .navmobile {
-    z-index: 15;
-    max-height: 40vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-
-  @media screen and (max-width: 1200px) {
-    .navbar {
-      max-width: 100vw;
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
     }
   }
 
-  @media screen and (max-width:1200px) and (min-width: 768px) {
-    @media (min-width: 768px) {
-      .navbar-nav {
-        float: right;
-        margin: 0;
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout  gemini">
+      <div class="section-layout-wrapper">
+        <div id="sidebarMeta" class="sidebar">
+    
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">君绾墨</p>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">0</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">0</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://zyx006.github.io/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+          
+            <a href="https://github.com/zyx006">
+              <i class="fa fa-github-alt" title="Github"></i>
+            </a>
+          
+            <a href="https://qm.qq.com/cgi-bin/qm/qr?k=I2jkn0dziL9o-T2Xcm7NG16jZzvoP7fy&amp;noverify=0">
+              <i class="fa fa-qq" title="QQ"></i>
+            </a>
+          
+        
+        
+      </div>
+    </div>
+  
+
+
+</div>
+</div>
+<script>
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'gemini';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
+      }
+    });
+  }
+  </script>
+        <div class="section-box box-shadow-wrapper">
+          <section class="section archives-section bg-color posts-expand">
+            
+
+<div class="bg-color">
+  <div class="archive-timeline-box">
+    <div class="archive-timeline-title">
+      
+        <h2>非常好！目前共计1篇日志，继续努力！</h2>
+      
+    </div>
+    
+      
+      
+        <div class="node-title">
+          <h2 class="tag-year">2020</h2>
+        </div>    
+        
+      
+      <a href="https://zyx006.github.io/post/mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming/">
+        <div class="motion-warpper tag-archive-node">
+          <div class="tag-node">
+            <h1>
+              11-14
+              <small>Mac键盘符号和快捷键说明</small>
+            </h1>
+          </div>  
+      </div>
+      </a>
+    
+  </div>
+  
+<div class="page bg-color">
+  <ul class="pagination-ul">
+    
+    
+      
+        <li class="pagination-li pagination-active">
+            <a href="/archives/page/../">
+              1
+            </a>
+        </li>
+      
+    
+    
+  </ul>
+</div>
+</div>
+
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>
+    <div class="poweredby">
+      ©2021 君绾墨
+    </div>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+    <div class="bg-img">
+      <img src="https://gitee.com/gentlemans_ink/blogimage/raw/master/img/20210103124339.jpg" />
+    </div>
+  
+  
+    
+<link rel="stylesheet" href="/media/live2d/css/live2d.css" />
+<div class="box-scale">
+  <div id="landlord" style="left: 5px;bottom: px;"
+    data-key="">
+    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+    
+
+      <div class="message" style="opacity:0"></div>
+      <div class="live_talk_input_body">
+        <div class="live_talk_input_name_body">
+          <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off"
+            placeholder="你的名字" />
+        </div>
+        <div class="live_talk_input_text_body">
+          <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off"
+            placeholder="要和我聊什么呀？" />
+          <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+        </div>
+      </div>
+      <input name="live_talk" id="live_talk" value="1" type="hidden" />
+      <div class="live_ico_box">
+        <div class="live_ico_item type_info" id="showInfoBtn"></div>
+        <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+        
+        <div class="live_ico_item type_youdu" id="youduButton"></div>
+        <div class="live_ico_item type_quit" id="hideButton"></div>
+        <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+        <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+        <input id="duType" value="douqilai" type="hidden">
+        
+      </div>
+    
+  </div>
+</div>
+<div id="open_live2d">召唤看板娘</div>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+  var message_Path = 'https://cdn.jsdelivr.net/gh/hsxyhao/live2d.github.io@master/';
+  let landlord = document.querySelector('#landlord');
+  var apiKey = landlord.dataset.key;
+</script>
+<script type="text/javascript" src="/media/live2d/js/live2d.js"></script>
+<script>
+	var home_Path = document.location.protocol + '//' + window.document.location.hostname + ":" + window.document.location.port + '/';
+	var userAgent = window.navigator.userAgent.toLowerCase();
+	var norunAI = ["android", "iphone", "ipod", "ipad", "windows phone", "mqqbrowser", "msie", "trident/7.0"];
+	var norunFlag = false;
+
+	for (var i = 0; i < norunAI.length; i++) {
+		if (userAgent.indexOf(norunAI[i]) > -1) {
+			norunFlag = true;
+			break;
+		}
+	}
+
+	if (!window.WebGLRenderingContext) {
+		norunFlag = true;
+	}
+
+	if (!norunFlag) {
+		var hitFlag = false;
+		var AIFadeFlag = false;
+		var liveTlakTimer = null;
+		var sleepTimer_ = null;
+		var AITalkFlag = false;
+		var talkNum = 0;
+		(function () {
+			function renderTip(template, context) {
+				var tokenReg = /(\\)?\{([^\{\}\\]+)(\\)?\}/g;
+				return template.replace(tokenReg, function (word, slash1, token, slash2) {
+					if (slash1 || slash2) {
+						return word.replace('\\', '');
+					}
+					var variables = token.replace(/\s/g, '').split('.');
+					var currentObject = context;
+					var i, length, variable;
+					for (i = 0, length = variables.length; i < length; ++i) {
+						variable = variables[i];
+						currentObject = currentObject[variable];
+						if (currentObject === undefined || currentObject === null) return '';
+					}
+					return currentObject;
+				});
+			}
+
+			String.prototype.renderTip = function (context) {
+				return renderTip(this, context);
+			};
+
+			var re = /x/;
+			re.toString = function () {
+				showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
+				return '';
+			};
+
+			$(document).on('copy', function () {
+				showMessage('你都复制了些什么呀，转载要记得加上出处哦~~', 5000);
+			});
+
+			function initTips() {
+				$.ajax({
+					cache: true,
+					url: message_Path + 'message.json',
+					dataType: "json",
+					success: function (result) {
+						$.each(result.mouseover, function (index, tips) {
+							$(tips.selector).mouseover(function () {
+								var text = tips.text;
+								if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
+								text = text.renderTip({ text: $(this).text() });
+								showMessage(text, 3000);
+								talkValTimer();
+								clearInterval(liveTlakTimer);
+								liveTlakTimer = null;
+							});
+							$(tips.selector).mouseout(function () {
+								showHitokoto();
+								if (liveTlakTimer == null) {
+									liveTlakTimer = window.setInterval(function () {
+										showHitokoto();
+									}, 15000);
+								};
+							});
+						});
+						$.each(result.click, function (index, tips) {
+							$(tips.selector).click(function () {
+								if (hitFlag) {
+									return false
+								}
+								hitFlag = true;
+								setTimeout(function () {
+									hitFlag = false;
+								}, 8000);
+								var text = tips.text;
+								if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
+								text = text.renderTip({ text: $(this).text() });
+								showMessage(text, 3000);
+							});
+							clearInterval(liveTlakTimer);
+							liveTlakTimer = null;
+							if (liveTlakTimer == null) {
+								liveTlakTimer = window.setInterval(function () {
+									showHitokoto();
+								}, 15000);
+							};
+						});
+					}
+				});
+			}
+			initTips();
+
+			var text;
+			if (document.referrer !== '') {
+				var referrer = document.createElement('a');
+				referrer.href = document.referrer;
+				text = '嗨！来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友！';
+				var domain = referrer.hostname.split('.')[1];
+				if (domain == 'baidu') {
+					text = '嗨！ 来自 百度搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				} else if (domain == 'so') {
+					text = '嗨！ 来自 360搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				} else if (domain == 'google') {
+					text = '嗨！ 来自 谷歌搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				}
+			} else {
+				if (window.location.href == home_Path) { //主页URL判断，需要斜杠结尾
+					var now = (new Date()).getHours();
+					if (now > 23 || now <= 5) {
+						text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？';
+					} else if (now > 5 && now <= 7) {
+						text = '早上好！一日之计在于晨，美好的一天就要开始了！';
+					} else if (now > 7 && now <= 11) {
+						text = '上午好！工作顺利嘛，不要久坐，多起来走动走动哦！';
+					} else if (now > 11 && now <= 14) {
+						text = '中午了，工作了一个上午，现在是午餐时间！';
+					} else if (now > 14 && now <= 17) {
+						text = '午后很容易犯困呢，今天的运动目标完成了吗？';
+					} else if (now > 17 && now <= 19) {
+						text = '傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~~';
+					} else if (now > 19 && now <= 21) {
+						text = '晚上好，今天过得怎么样？';
+					} else if (now > 21 && now <= 23) {
+						text = '已经这么晚了呀，早点休息吧，晚安~~';
+					} else {
+						text = '嗨~ 快来逗我玩吧！';
+					}
+				} else {
+					text = '欢迎阅读<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				}
+			}
+			showMessage(text, 12000);
+		})();
+
+		liveTlakTimer = setInterval(function () {
+			showHitokoto();
+		}, 15000);
+
+		function showHitokoto() {
+			if (sessionStorage.getItem("Sleepy") !== "1") {
+				if (!AITalkFlag) {
+					$.getJSON('https://v1.hitokoto.cn/', function (result) {
+						talkValTimer();
+						showMessage(result.hitokoto, 0);
+					});
+				}
+			} else {
+				hideMessage(0);
+				if (sleepTimer_ == null) {
+					sleepTimer_ = setInterval(function () {
+						checkSleep();
+					}, 200);
+				}
+			}
+		}
+
+		function checkSleep() {
+			var sleepStatu = sessionStorage.getItem("Sleepy");
+			if (sleepStatu !== '1') {
+				talkValTimer();
+				showMessage('你回来啦~', 0);
+				clearInterval(sleepTimer_);
+				sleepTimer_ = null;
+			}
+		}
+
+		function showMessage(text, timeout) {
+			if (Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1) - 1];
+			$('.message').stop();
+			$('.message').html(text);
+			$('.message').fadeTo(200, 1);
+			//if (timeout === null) timeout = 5000;
+			//hideMessage(timeout);
+		}
+		function talkValTimer() {
+			$('#live_talk').val('1');
+		}
+
+		function hideMessage(timeout) {
+			//$('.message').stop().css('opacity',1);
+			if (timeout === null) timeout = 5000;
+			$('.message').delay(timeout).fadeTo(200, 0);
+		}
+
+		function initLive2d() {
+			$('#hideButton').on('click', function () {
+				if (AIFadeFlag) {
+					return false;
+				} else {
+					AIFadeFlag = true;
+					localStorage.setItem("live2dhidden", "0");
+					$('#landlord').fadeOut(200);
+					$('#open_live2d').delay(200).fadeIn(200);
+					setTimeout(function () {
+						AIFadeFlag = false;
+					}, 300);
+				}
+			});
+			$('#open_live2d').on('click', function () {
+				if (AIFadeFlag) {
+					return false;
+				} else {
+					AIFadeFlag = true;
+					localStorage.setItem("live2dhidden", "1");
+					$('#open_live2d').fadeOut(200);
+					$('#landlord').delay(200).fadeIn(200);
+					setTimeout(function () {
+						AIFadeFlag = false;
+					}, 300);
+				}
+			});
+			$('#youduButton').on('click', function () {
+				if ($('#youduButton').hasClass('doudong')) {
+					var typeIs = $('#youduButton').attr('data-type');
+					$('#youduButton').removeClass('doudong');
+					$('body').removeClass(typeIs);
+					$('#youduButton').attr('data-type', '');
+				} else {
+					var duType = $('#duType').val();
+					var duArr = duType.split(",");
+					var dataType = duArr[Math.floor(Math.random() * duArr.length)];
+
+					$('#youduButton').addClass('doudong');
+					$('#youduButton').attr('data-type', dataType);
+					$('body').addClass(dataType);
+				}
+			});
+			if (apiKey) {
+				$('#showInfoBtn').on('click', function () {
+					var live_statu = $('#live_statu_val').val();
+					if (live_statu == "0") {
+						return
+					} else {
+						$('#live_statu_val').val("0");
+						$('.live_talk_input_body').fadeOut(500);
+						AITalkFlag = false;
+						showHitokoto();
+						$('#showTalkBtn').show();
+						$('#showInfoBtn').hide();
+					}
+				});
+				$('#showTalkBtn').on('click', function () {
+					var live_statu = $('#live_statu_val').val();
+					if (live_statu == "1") {
+						return
+					} else {
+						$('#live_statu_val').val("1");
+						$('.live_talk_input_body').fadeIn(500);
+						AITalkFlag = true;
+						$('#showTalkBtn').hide();
+						$('#showInfoBtn').show();
+
+					}
+				});
+				$('#talk_send').on('click', function () {
+					var info_ = $('#AIuserText').val();
+					var userid_ = $('#AIuserName').val();
+					if (info_ == "") {
+						showMessage('写点什么吧！', 0);
+						return;
+					}
+					if (userid_ == "") {
+						showMessage('聊之前请告诉我你的名字吧！', 0);
+						return;
+					}
+					showMessage('思考中~', 0);
+					let protocol = window.location.protocol.indexOf("s") > 0 ? "https" : "http";
+					$.ajax({
+						type: "get",
+						url: `${protocol}://www.tuling123.com/openapi/api?key=${apiKey}&info=${info_}`,
+						dataType: "json",
+						success: function (res) {
+							talkValTimer();
+							showMessage(res.text, 0);
+							$('#AIuserText').val("");
+							sessionStorage.setItem("live2duser", userid_);
+						},
+						error: function (e) {
+							talkValTimer();
+							showMessage('似乎有什么错误，请和站长联系！', 0);
+						}
+					});
+				});
+			} else {
+				$('#showInfoBtn').hide();
+				$('#showTalkBtn').hide();
+			}
+			//获取音乐信息初始化
+			var bgmListInfo = $('input[name=live2dBGM]');
+			if (bgmListInfo.length == 0) {
+				$('#musicButton').hide();
+			} else {
+				var bgmPlayNow = parseInt($('#live2d_bgm').attr('data-bgm'));
+				var bgmPlayTime = 0;
+				var live2dBGM_Num = sessionStorage.getItem("live2dBGM_Num");
+				var live2dBGM_PlayTime = sessionStorage.getItem("live2dBGM_PlayTime");
+				if (live2dBGM_Num) {
+					if (live2dBGM_Num <= $('input[name=live2dBGM]').length - 1) {
+						bgmPlayNow = parseInt(live2dBGM_Num);
+					}
+				}
+				if (live2dBGM_PlayTime) {
+					bgmPlayTime = parseInt(live2dBGM_PlayTime);
+				}
+				var live2dBGMSrc = bgmListInfo.eq(bgmPlayNow).val();
+				$('#live2d_bgm').attr('data-bgm', bgmPlayNow);
+				$('#live2d_bgm').attr('src', live2dBGMSrc);
+				$('#live2d_bgm')[0].currentTime = bgmPlayTime;
+				$('#live2d_bgm')[0].volume = 0.5;
+				var live2dBGM_IsPlay = sessionStorage.getItem("live2dBGM_IsPlay");
+				var live2dBGM_WindowClose = sessionStorage.getItem("live2dBGM_WindowClose");
+				if (live2dBGM_IsPlay == '0' && live2dBGM_WindowClose == '0') {
+					$('#live2d_bgm')[0].play();
+					$('#musicButton').addClass('play');
+				}
+				sessionStorage.setItem("live2dBGM_WindowClose", '1');
+				$('#musicButton').on('click', function () {
+					if ($('#musicButton').hasClass('play')) {
+						$('#live2d_bgm')[0].pause();
+						$('#musicButton').removeClass('play');
+						sessionStorage.setItem("live2dBGM_IsPlay", '1');
+					} else {
+						$('#live2d_bgm')[0].play();
+						$('#musicButton').addClass('play');
+						sessionStorage.setItem("live2dBGM_IsPlay", '0');
+					}
+				});
+				window.onbeforeunload = function () {
+					sessionStorage.setItem("live2dBGM_WindowClose", '0');
+					if ($('#musicButton').hasClass('play')) {
+						sessionStorage.setItem("live2dBGM_IsPlay", '0');
+					}
+				}
+				document.getElementById('live2d_bgm').addEventListener("timeupdate", function () {
+					var live2dBgmPlayTimeNow = document.getElementById('live2d_bgm').currentTime;
+					sessionStorage.setItem("live2dBGM_PlayTime", live2dBgmPlayTimeNow);
+				});
+				document.getElementById('live2d_bgm').addEventListener("ended", function () {
+					var listNow = parseInt($('#live2d_bgm').attr('data-bgm'));
+					listNow++;
+					if (listNow > $('input[name=live2dBGM]').length - 1) {
+						listNow = 0;
+					}
+					var listNewSrc = $('input[name=live2dBGM]').eq(listNow).val();
+					sessionStorage.setItem("live2dBGM_Num", listNow);
+					$('#live2d_bgm').attr('src', listNewSrc);
+					$('#live2d_bgm')[0].play();
+					$('#live2d_bgm').attr('data-bgm', listNow);
+				});
+				document.getElementById('live2d_bgm').addEventListener("error", function () {
+					$('#live2d_bgm')[0].pause();
+					$('#musicButton').removeClass('play');
+					showMessage('音乐似乎加载不出来了呢！', 0);
+				});
+			}
+			//获取用户名
+			var live2dUser = sessionStorage.getItem("live2duser");
+			if (live2dUser !== null) {
+				$('#AIuserName').val(live2dUser);
+			}
+			//获取位置
+			var landL = sessionStorage.getItem("historywidth");
+			var landB = sessionStorage.getItem("historyheight");
+			if (landL == null || landB == null) {
+				landL = '5px'
+				landB = '0px'
+			}
+			$('#landlord').css('left', landL + 'px');
+			$('#landlord').css('bottom', landB + 'px');
+			//移动
+			function getEvent() {
+				return window.event || arguments.callee.caller.arguments[0];
+			}
+			var smcc = document.getElementById("landlord");
+			var moveX = 0;
+			var moveY = 0;
+			var moveBottom = 0;
+			var moveLeft = 0;
+			var moveable = false;
+			var docMouseMoveEvent = document.onmousemove;
+			var docMouseUpEvent = document.onmouseup;
+			smcc.onmousedown = function () {
+				var ent = getEvent();
+				moveable = true;
+				moveX = ent.clientX;
+				moveY = ent.clientY;
+				var obj = smcc;
+				moveBottom = parseInt(obj.style.bottom);
+				moveLeft = parseInt(obj.style.left);
+				if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
+					window.getSelection().removeAllRanges();
+				}
+				document.onmousemove = function () {
+					if (moveable) {
+						var ent = getEvent();
+						var x = moveLeft + ent.clientX - moveX;
+						var y = moveBottom + (moveY - ent.clientY);
+						obj.style.left = x + "px";
+						obj.style.bottom = y + "px";
+					}
+				};
+				document.onmouseup = function () {
+					if (moveable) {
+						var historywidth = obj.style.left;
+						var historyheight = obj.style.bottom;
+						historywidth = historywidth.replace('px', '');
+						historyheight = historyheight.replace('px', '');
+						sessionStorage.setItem("historywidth", historywidth);
+						sessionStorage.setItem("historyheight", historyheight);
+						document.onmousemove = docMouseMoveEvent;
+						document.onmouseup = docMouseUpEvent;
+						moveable = false;
+						moveX = 0;
+						moveY = 0;
+						moveBottom = 0;
+						moveLeft = 0;
+					}
+				};
+			};
+		}
+		$(document).ready(function () {
+			var AIimgSrc = [];
+			let chooseLive2d = 'tororo'
+			if (chooseLive2d === 'histoire') {
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_00.png");
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_01.png");
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_02.png");
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_03.png");
+			} else if (chooseLive2d === 'rem') {
+				AIimgSrc.push(message_Path + "model/rem/remu2048/texture_00.png");
+			} else if (chooseLive2d === 'Aoba') {
+				AIimgSrc.push(message_Path + "model/Aoba/textures/texture_00.png");
+			} else if (chooseLive2d === 'hijiki') {
+				AIimgSrc.push(message_Path + "model/hijiki/moc/hijiki.2048/texture_00.png");
+			} else if (chooseLive2d === 'tororo') {
+				AIimgSrc.push(message_Path + "model/tororo/moc/tororo.2048/texture_00.png");
+			}
+			var images = [];
+			var imgLength = AIimgSrc.length;
+			var loadingNum = 0;
+			for (var i = 0; i < imgLength; i++) {
+				images[i] = new Image();
+				images[i].src = AIimgSrc[i];
+				images[i].onload = function () {
+					loadingNum++;
+					if (loadingNum === imgLength) {
+						var live2dhidden = localStorage.getItem("live2dhidden");
+						if (live2dhidden === "0") {
+							setTimeout(function () {
+								$('#open_live2d').fadeIn(200);
+							}, 1300);
+						} else {
+							setTimeout(function () {
+								$('#landlord').fadeIn(200);
+							}, 1300);
+						}
+						let model = '';
+						if (chooseLive2d === 'histoire') {
+							model = message_Path + "model/histoire/model.json";
+						} else if (chooseLive2d === 'rem') {
+							model = message_Path + "model/rem/model.json";
+						} else if (chooseLive2d === 'Aoba') {
+							model = message_Path + "model/Aoba/model.json";
+						} else if (chooseLive2d === 'hijiki') {
+							model = message_Path + "model/hijiki/hijiki.model.json";
+						} else if (chooseLive2d === 'tororo') {
+							model = message_Path + "model/tororo/tororo.model.json";
+						}
+						setTimeout(function () {
+							loadlive2d("live2d", model);
+						}, 1000);
+						initLive2d();
+						images = null;
+					}
+				}
+			}
+		});
+	}
+</script>
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+  back2TopText = document.querySelector('#back_to_top_text'),
+  drawerBox = document.querySelector('#drawer_box'),
+  rightSideBar = document.querySelector('.sidebar'),
+  viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+   
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function(e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+  
+  window.addEventListener('scroll', function(e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+  
+  let hasCacu = false;
+  window.onresize = function() {
+    if (window.width > 991) {
+      calcuHeight();
+    } else {
+      hasCacu = false;
+    }
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+  
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function() {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, transitionDir,{ });
+          }
+        })
+        window.Velocity(viewport, openProp,{
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp ,{
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'false'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target","_blank");
+      }
+    })
+  }
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+
+</script>
+  </div>
+</body>
+<input hidden id="copy" />
+<script>
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
       }
     }
-  }
 
-  @media screen and (max-width:768px) {
-    .mbapspan {
-      padding: 0;
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        console.log('复制操作频率过高');
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
     }
   }
-</style>
-<div class="pjaxloading"  onclick="pjaxloadingClose()">
-  <div class="loadingbackground"></div>
-  <div id="loading">
-    <div class="loading">
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+</script>
+<script src="/media/js/motion.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 500
+  });
+</script>
+
+<!-- <div class="search-mask" id="search_mask">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input type="text" placeholder="搜索">
+      </div>
+      <i class="fa fa-times-circle"></i>
+    </div>
+    <div class="result">
+      
+      <div class="item">
+        <a class="result-title" href="https://zyx006.github.io/post/about/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;关于本站&#34;&gt;🏠 关于本站&lt;/h2&gt;
+&lt;p&gt;本站使用Gridea博客系统，基于Github Pages及Gitee仓库图床，在此感谢。&lt;/p&gt;
+&lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀​&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://qm.qq.com/cgi-bin/qm/qr?k=I2jkn0dziL9o-T2Xcm7NG16jZzvoP7fy&amp;amp;noverify=0&#34;&gt;QQ：1029606625&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/zyx006&#34;&gt;Github：zyx006&lt;/a&gt;&lt;/p&gt;
+">关于</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zyx006.github.io/post/mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming/"" data-c="
+          &lt;p&gt;⌘  Command&lt;br&gt;
+⇧  Shift&lt;br&gt;
+⇪  CapsLock&lt;br&gt;
+⌥  Option&lt;br&gt;
+⌃  Control&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;↩  Return/Enter&lt;br&gt;
+⌫  Delete&lt;br&gt;
+⌦  向前删除键(Fn + Delete)&lt;br&gt;
+↑  上箭头&lt;br&gt;
+↓  下箭头&lt;br&gt;
+←  左箭头&lt;br&gt;
+→  右箭头&lt;br&gt;
+⇞  PageUp(Fn + ↑)&lt;br&gt;
+⇟  PageDown(Fn + ↓)&lt;br&gt;
+Home  Fn + ←&lt;br&gt;
+End  Fn + →&lt;br&gt;
+⇥  右制表符(Tpb键)&lt;br&gt;
+⇤  左制表符(Shift + Tpb)&lt;br&gt;
+⎋  Escape(Esc)&lt;/p&gt;
+&lt;h2 id=&#34;searchreplace查询替换&#34;&gt;Search/Replace(查询/替换)&lt;/h2&gt;
+&lt;p&gt;Double Shift(⇧)  查询任何东西&lt;br&gt;
+Command(⌘) + F  文件内查找&lt;br&gt;
+Command(⌘) + G  查找模式下，向下查找&lt;br&gt;
+Command(⌘) + Shift(⇧) + G  查找模式下，向上查找&lt;br&gt;
+Command(⌘) + R  文件内替换&lt;br&gt;
+Command(⌘) + Shift(⇧) + F  全局查找(根据路径)&lt;br&gt;
+Command(⌘) + Shift(⇧) + R  全局替换(根据路径)&lt;br&gt;
+Command(⌘) + Shift(⇧) + S  查询结构(Ultimate Edition 版专用，需要在Keymap中设置)&lt;br&gt;
+Command(⌘) + Shift(⇧) + M  替换结构(Ultimate Edition 版专用，需要在Keymap中设置)&lt;/p&gt;
+&lt;h2 id=&#34;usage-search使用查询&#34;&gt;Usage Search(使用查询)&lt;/h2&gt;
+&lt;p&gt;Option(⌥) + F7 / Command(⌘) + F7  在文件中查找用法 / 在类中查找用法&lt;br&gt;
+Command(⌘) + Shift(⇧) + F7  在文件中突出显示的用法&lt;br&gt;
+Command(⌘) + Option(⌥) + F7  显示用法&lt;/p&gt;
+&lt;h2 id=&#34;compile-and-run编译和运行&#34;&gt;Compile and Run(编译和运行)&lt;/h2&gt;
+&lt;p&gt;Command(⌘) + F  编译Project&lt;br&gt;
+Command(⌘) + Shift(⇧) + F9  编译选择的文件、包或模块&lt;br&gt;
+Control(⌃) + Option(⌥) + R  弹出 Run 的可选择菜单&lt;br&gt;
+Control(⌃) + Option(⌥) + D  弹出 Debug 的可选择菜单&lt;br&gt;
+Control(⌃) + R  运行&lt;br&gt;
+Control(⌃) + D  调试&lt;br&gt;
+Control(⌃) + Shift(⇧) + R, Control(⌃) + Shift(⇧) + D  从编辑器运行上下文环境配置&lt;/p&gt;
+&lt;h2 id=&#34;通用&#34;&gt;通用&lt;/h2&gt;
+&lt;p&gt;Command(⌘) + C  复制&lt;br&gt;
+Command(⌘) + V  粘贴&lt;/p&gt;
+&lt;h3 id=&#34;剪切&#34;&gt;   剪切&lt;/h3&gt;
+&lt;p&gt;   Step 1:Command(⌘) + C  复制&lt;br&gt;
+   Step 2:在需要转移的文件夹位置使用Command(⌘) + Option(⌥) + V。(如果操作后悔了，还可以 Command(⌘) + Z 撤销。)&lt;/p&gt;
+&lt;p&gt;Command(⌘) + A  全选&lt;br&gt;
+Command(⌘) + S  保存&lt;br&gt;
+Command(⌘) + F  查找(Find)&lt;br&gt;
+Command(⌘) + M  最小化窗口&lt;br&gt;
+Command(⌘) + N  新建文件&lt;br&gt;
+Command(⌘) + O  打开&lt;br&gt;
+Command(⌘) + H  隐藏窗口&lt;br&gt;
+Command(⌘) + Shift(⇧) + S  另存&lt;br&gt;
+Command(⌘) + W  关闭&lt;br&gt;
+Command(⌘) + Q  退出&lt;br&gt;
+Command(⌘) + Z  撤销(如果是safari浏览器，就是恢复刚关闭的页面)&lt;br&gt;
+Command(⌘) + Shift(⇧) + Z  重做，也就是撤销的逆向操作&lt;br&gt;
+Command(⌘) + Option(⌥) + Esc  强制退出程序(类似于window下的任务管理器)&lt;br&gt;
+自带的输入法(Capslock 短按中英文切换，长按英文大写)&lt;br&gt;
+Command(⌘) + Shift(⇧) + 4  截取所选屏幕区域到一个文件，或按空格键仅捕捉一个窗口&lt;br&gt;
+Command(⌘) + Delete  将文件移至废纸篓(Windows键盘是 Win + Backspace)&lt;br&gt;
+Command(⌘) + Shift(⇧) + Delete  清倒废纸篓(Windows键盘是 Win + Shift + Backspace)&lt;br&gt;
+Space  快速查看选中的文件，也就是预览功能&lt;br&gt;
+Command(⌘) + ↑  打开包含当前文件夹的文件夹，相当于Windows里的“向上”&lt;br&gt;
+Command(⌘) + Tab  在应用程序间切换(应用处于打开且在桌面的情况)&lt;/p&gt;
+&lt;h2 id=&#34;浏览器&#34;&gt;浏览器&lt;/h2&gt;
+&lt;p&gt;Command(⌘) + L  光标直接跳至地址栏(可能被Windows响应锁屏)&lt;br&gt;
+Command(⌘) + &#39;+&#39; / &#39;=&#39;  放大页面&lt;br&gt;
+Command(⌘) + &#39;-&#39;  缩小页面&lt;br&gt;
+Control(⌃) + Tab  转向下一个标签页&lt;br&gt;
+Control(⌃) + Shift(⇧) + Tab  转向上一个标签页&lt;br&gt;
+Command(⌘) + R  刷新&lt;br&gt;
+Command(⌘) + T  新建一个选项卡&lt;br&gt;
+PageDown  向下滚动屏幕&lt;br&gt;
+PageUp  向上滚动屏幕&lt;br&gt;
+按下箭头键 向上、向下、向左或向右滚动&lt;br&gt;
+按下箭头键时按住Option(⌥)键大幅度滚动&lt;br&gt;
+enter即回车  重命名&lt;br&gt;
+Command(⌘) + 鼠标点击  多选不连续的文件或文件夹&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+&lt;p&gt;选中多个连续的文件或文件夹&lt;br&gt;
+按住Shift(⇧)键不放，使用鼠标依次点击(或按住鼠标后拖动)希望选择的文件或者文件夹即可&lt;br&gt;
+文件可以右键重命名&lt;br&gt;
+如果桌面的文件不对齐排列，可以右键整理&lt;br&gt;
+Shift(⇧) + Command(⌘) + C  打开“电脑”窗口&lt;br&gt;
+文件右键有一个“制作替身”，相当于新建一个快捷方式&lt;/p&gt;
+">Mac键盘符号和快捷键说明</a>
+      </div>
+      
     </div>
   </div>
 </div>
-<nav class="navbar navbar-inverse navbar-fixed-top navmobile">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
-        aria-expanded="false" id="barbutton">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a data-pjax class="navbar-brand" href="https://zyx006.github.io">君绾墨的blog&nbsp;&nbsp;|</a>
-      <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
-          style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="barmenu">
-      <ul class="nav navbar-nav">
-        
-        
-        <li>
-          <a data-pjax href="/">
-            首页
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/archives">
-            归档
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/tags">
-            标签
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/post/about">
-            关于
-          </a>
-        </li>
-        
-        
-        
-          
-        <li><a data-pjax href="https://zyx006.github.io/friends">友链</a></li>
-
-        
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-
-  <!-- 引入jQuery核心js文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-  <script>
-    let btstate = false;
-    var bt = $("#barbutton");
-    var bm = $("#barmenu");
-    bt.click(function () {
-      dropdown();
-    })
-    function dropdown() {
-      console.log(btstate);
-      //下拉
-      if (btstate == false) {
-        bt.removeClass("collapsed");
-        bt.attr("aria-expanded", "true");
-        bm.attr("aria-expanded", "true")
-        bm.fadeIn(700);
-        btstate = true;
-      }
-      else {
-        bt.addClass("collapsed");
-        bt.attr("aria-expanded", "false");
-        bm.removeClass("in");
-        bm.hide();
-        bm.attr("aria-expanded", "false");
-        btstate = false;
-      }
-    }
-  </script> 
-                </div>
-                <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-                    <body">
-    <div class="archives-content">
-        
-        
-        <div class="archives-year">2020</div>
-        <ul>
-            
-            
-            <li><span></span>
-                <div>
-                  <a data-pjax href="https://zyx006.github.io/post/mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming/" class="post">
-                    <div class="archives-title">Mac键盘符号和快捷键说明</div>
-                    <div class="archives-time">2020-11-14</div>
-                </a>
-                    
-                </div>
-            </li>
-            
-            
-        </ul>
-        
-    </div>
-</body">
-                    <div>
-                        <div class="pcpagi">
-    <div class="pagi">
-        <ul>
-            
-            <li><a style="width:100px">&nbsp;</a></li>
-            
-                    <li><a id="page1">1</a></li>
-                    <li><a id="page2" class="active">2</a></li>
-                    <li><a id="page3">3</a></li>
-                    
-            <li><a style="width:100px">&nbsp;</a></li>
-            
-                </ul>
-    </div>
-</div>
-
-<div id="pagination-prev" style="display:none"> 
-</div>
-<div id="pagination-next" style="display:none"> </div>
-
-<div class="pagination-container">
-      
-    
-</div>
-
 <script>
-    var prevstr = document.getElementById("pagination-prev").innerHTML;
-    var nextstr = document.getElementById("pagination-next").innerHTML;
-    var page1 = document.getElementById("page1");
-    var page2 = document.getElementById("page2");
-    var page3 = document.getElementById("page3");
-    page1.innerHTML = '-';
-    page2.innerHTML = '1';
-    page3.innerHTML = '-';
-    if (prevstr.length > 5) {
-        if (prevstr.indexOf("page/") != -1) {
-            var prevnum = parseInt(prevstr.split("page/")[1]);
-            page1.innerHTML = prevnum;
-            page2.innerHTML = prevnum + 1;
-        } else {
-            page1.innerHTML = 1;
-            page2.innerHTML = 2;
-        }
-    }
-    if (nextstr.indexOf("page/") != -1) {
-        var nextnum = parseInt(nextstr.split("page/")[1]);
-        page3.innerHTML = nextnum;
-        page2.innerHTML = nextnum - 1;
-    }
-</script>
-                        <div style="padding-bottom:10%"></div>
-                    </div>
-                </div>
-                <div class="col-md-1 col-lg-2"></div>
-                
-                <div class="col-xs-6 col-sm-3"></div>
-            </div>
-            
-        </div>
-        <div id="bg">
-        </div>
-        <div id="bgchoice" style="display: none">link
-            </div>
-            
-            <div id="bgurl" style="display:none">https://gitee.com/gentlemans_ink/blogimage/raw/master/img/20210103113438.jfif</div>
-               
-    </div>
+  // var escape = "[{&#34;content&#34;:&#34;&lt;blockquote&gt;\n&lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;\n&lt;/blockquote&gt;\n&lt;h2 id=\&#34;关于本站\&#34;&gt;🏠 关于本站&lt;/h2&gt;\n&lt;p&gt;本站使用Gridea博客系统，基于Github Pages及Gitee仓库图床，在此感谢。&lt;/p&gt;\n&lt;h2 id=\&#34;联系我呀\&#34;&gt;📬 联系我呀​&lt;/h2&gt;\n&lt;p&gt;&lt;a href=\&#34;https://qm.qq.com/cgi-bin/qm/qr?k=I2jkn0dziL9o-T2Xcm7NG16jZzvoP7fy&amp;amp;noverify=0\&#34;&gt;QQ：1029606625&lt;/a&gt;&lt;br&gt;\n&lt;a href=\&#34;https://github.com/zyx006\&#34;&gt;Github：zyx006&lt;/a&gt;&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;about&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;关于&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2021-01-01 17:14:11&#34;,&#34;dateFormat&#34;:&#34;2021-01-01&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zyx006.github.io/post/about/&#34;,&#34;hideInList&#34;:true,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:11000,&#34;words&#34;:49,&#34;minutes&#34;:1},&#34;description&#34;:&#34;\n欢迎来到我的小站呀，很高兴遇见你！🤝\n\n🏠 关于本站\n本站使用Gridea博客系统，基于Github Pages及Gitee仓库图床，在此感谢。\n📬 联系我呀​\nQQ：1029606625\nGithub：zyx006\n...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99\&#34;&gt;🏠 关于本站&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80\&#34;&gt;📬 联系我呀​&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;p&gt;⌘  Command&lt;br&gt;\n⇧  Shift&lt;br&gt;\n⇪  CapsLock&lt;br&gt;\n⌥  Option&lt;br&gt;\n⌃  Control&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;p&gt;↩  Return/Enter&lt;br&gt;\n⌫  Delete&lt;br&gt;\n⌦  向前删除键(Fn + Delete)&lt;br&gt;\n↑  上箭头&lt;br&gt;\n↓  下箭头&lt;br&gt;\n←  左箭头&lt;br&gt;\n→  右箭头&lt;br&gt;\n⇞  PageUp(Fn + ↑)&lt;br&gt;\n⇟  PageDown(Fn + ↓)&lt;br&gt;\nHome  Fn + ←&lt;br&gt;\nEnd  Fn + →&lt;br&gt;\n⇥  右制表符(Tpb键)&lt;br&gt;\n⇤  左制表符(Shift + Tpb)&lt;br&gt;\n⎋  Escape(Esc)&lt;/p&gt;\n&lt;h2 id=\&#34;searchreplace查询替换\&#34;&gt;Search/Replace(查询/替换)&lt;/h2&gt;\n&lt;p&gt;Double Shift(⇧)  查询任何东西&lt;br&gt;\nCommand(⌘) + F  文件内查找&lt;br&gt;\nCommand(⌘) + G  查找模式下，向下查找&lt;br&gt;\nCommand(⌘) + Shift(⇧) + G  查找模式下，向上查找&lt;br&gt;\nCommand(⌘) + R  文件内替换&lt;br&gt;\nCommand(⌘) + Shift(⇧) + F  全局查找(根据路径)&lt;br&gt;\nCommand(⌘) + Shift(⇧) + R  全局替换(根据路径)&lt;br&gt;\nCommand(⌘) + Shift(⇧) + S  查询结构(Ultimate Edition 版专用，需要在Keymap中设置)&lt;br&gt;\nCommand(⌘) + Shift(⇧) + M  替换结构(Ultimate Edition 版专用，需要在Keymap中设置)&lt;/p&gt;\n&lt;h2 id=\&#34;usage-search使用查询\&#34;&gt;Usage Search(使用查询)&lt;/h2&gt;\n&lt;p&gt;Option(⌥) + F7 / Command(⌘) + F7  在文件中查找用法 / 在类中查找用法&lt;br&gt;\nCommand(⌘) + Shift(⇧) + F7  在文件中突出显示的用法&lt;br&gt;\nCommand(⌘) + Option(⌥) + F7  显示用法&lt;/p&gt;\n&lt;h2 id=\&#34;compile-and-run编译和运行\&#34;&gt;Compile and Run(编译和运行)&lt;/h2&gt;\n&lt;p&gt;Command(⌘) + F  编译Project&lt;br&gt;\nCommand(⌘) + Shift(⇧) + F9  编译选择的文件、包或模块&lt;br&gt;\nControl(⌃) + Option(⌥) + R  弹出 Run 的可选择菜单&lt;br&gt;\nControl(⌃) + Option(⌥) + D  弹出 Debug 的可选择菜单&lt;br&gt;\nControl(⌃) + R  运行&lt;br&gt;\nControl(⌃) + D  调试&lt;br&gt;\nControl(⌃) + Shift(⇧) + R, Control(⌃) + Shift(⇧) + D  从编辑器运行上下文环境配置&lt;/p&gt;\n&lt;h2 id=\&#34;通用\&#34;&gt;通用&lt;/h2&gt;\n&lt;p&gt;Command(⌘) + C  复制&lt;br&gt;\nCommand(⌘) + V  粘贴&lt;/p&gt;\n&lt;h3 id=\&#34;剪切\&#34;&gt;   剪切&lt;/h3&gt;\n&lt;p&gt;   Step 1:Command(⌘) + C  复制&lt;br&gt;\n   Step 2:在需要转移的文件夹位置使用Command(⌘) + Option(⌥) + V。(如果操作后悔了，还可以 Command(⌘) + Z 撤销。)&lt;/p&gt;\n&lt;p&gt;Command(⌘) + A  全选&lt;br&gt;\nCommand(⌘) + S  保存&lt;br&gt;\nCommand(⌘) + F  查找(Find)&lt;br&gt;\nCommand(⌘) + M  最小化窗口&lt;br&gt;\nCommand(⌘) + N  新建文件&lt;br&gt;\nCommand(⌘) + O  打开&lt;br&gt;\nCommand(⌘) + H  隐藏窗口&lt;br&gt;\nCommand(⌘) + Shift(⇧) + S  另存&lt;br&gt;\nCommand(⌘) + W  关闭&lt;br&gt;\nCommand(⌘) + Q  退出&lt;br&gt;\nCommand(⌘) + Z  撤销(如果是safari浏览器，就是恢复刚关闭的页面)&lt;br&gt;\nCommand(⌘) + Shift(⇧) + Z  重做，也就是撤销的逆向操作&lt;br&gt;\nCommand(⌘) + Option(⌥) + Esc  强制退出程序(类似于window下的任务管理器)&lt;br&gt;\n自带的输入法(Capslock 短按中英文切换，长按英文大写)&lt;br&gt;\nCommand(⌘) + Shift(⇧) + 4  截取所选屏幕区域到一个文件，或按空格键仅捕捉一个窗口&lt;br&gt;\nCommand(⌘) + Delete  将文件移至废纸篓(Windows键盘是 Win + Backspace)&lt;br&gt;\nCommand(⌘) + Shift(⇧) + Delete  清倒废纸篓(Windows键盘是 Win + Shift + Backspace)&lt;br&gt;\nSpace  快速查看选中的文件，也就是预览功能&lt;br&gt;\nCommand(⌘) + ↑  打开包含当前文件夹的文件夹，相当于Windows里的“向上”&lt;br&gt;\nCommand(⌘) + Tab  在应用程序间切换(应用处于打开且在桌面的情况)&lt;/p&gt;\n&lt;h2 id=\&#34;浏览器\&#34;&gt;浏览器&lt;/h2&gt;\n&lt;p&gt;Command(⌘) + L  光标直接跳至地址栏(可能被Windows响应锁屏)&lt;br&gt;\nCommand(⌘) + &#39;+&#39; / &#39;=&#39;  放大页面&lt;br&gt;\nCommand(⌘) + &#39;-&#39;  缩小页面&lt;br&gt;\nControl(⌃) + Tab  转向下一个标签页&lt;br&gt;\nControl(⌃) + Shift(⇧) + Tab  转向上一个标签页&lt;br&gt;\nCommand(⌘) + R  刷新&lt;br&gt;\nCommand(⌘) + T  新建一个选项卡&lt;br&gt;\nPageDown  向下滚动屏幕&lt;br&gt;\nPageUp  向上滚动屏幕&lt;br&gt;\n按下箭头键 向上、向下、向左或向右滚动&lt;br&gt;\n按下箭头键时按住Option(⌥)键大幅度滚动&lt;br&gt;\nenter即回车  重命名&lt;br&gt;\nCommand(⌘) + 鼠标点击  多选不连续的文件或文件夹&lt;/p&gt;\n&lt;h2 id=\&#34;其他\&#34;&gt;其他&lt;/h2&gt;\n&lt;p&gt;选中多个连续的文件或文件夹&lt;br&gt;\n按住Shift(⇧)键不放，使用鼠标依次点击(或按住鼠标后拖动)希望选择的文件或者文件夹即可&lt;br&gt;\n文件可以右键重命名&lt;br&gt;\n如果桌面的文件不对齐排列，可以右键整理&lt;br&gt;\nShift(⇧) + Command(⌘) + C  打开“电脑”窗口&lt;br&gt;\n文件右键有一个“制作替身”，相当于新建一个快捷方式&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;⌘  Command&lt;br&gt;\n⇧  Shift&lt;br&gt;\n⇪  CapsLock&lt;br&gt;\n⌥  Option&lt;br&gt;\n⌃  Control&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;Mac键盘符号和快捷键说明&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2020-11-14 17:41:52&#34;,&#34;dateFormat&#34;:&#34;2020-11-14&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zyx006.github.io/post/mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;4 min read&#34;,&#34;time&#34;:197000,&#34;words&#34;:824,&#34;minutes&#34;:4},&#34;description&#34;:&#34;⌘  Command\n⇧  Shift\n⇪  CapsLock\n⌥  Option\n⌃  Control\n\n↩  Return/Enter\n⌫  Delete\n⌦  向前删除键(Fn + Delete)\n↑  上箭头\n↓  下箭头\n←  左...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#searchreplace%E6%9F%A5%E8%AF%A2%E6%9B%BF%E6%8D%A2\&#34;&gt;Search/Replace(查询/替换)&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#usage-search%E4%BD%BF%E7%94%A8%E6%9F%A5%E8%AF%A2\&#34;&gt;Usage Search(使用查询)&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#compile-and-run%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C\&#34;&gt;Compile and Run(编译和运行)&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E9%80%9A%E7%94%A8\&#34;&gt;通用&lt;/a&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%89%AA%E5%88%87\&#34;&gt;   剪切&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E6%B5%8F%E8%A7%88%E5%99%A8\&#34;&gt;浏览器&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%85%B6%E4%BB%96\&#34;&gt;其他&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&#34;}]";
+  // var json = escape.substr(1, escape.length - 2);
+  // var datas = json.split(',');
+  // for (let i=0; i < datas.length; i++) {
+  //   let item = datas[i];
+  //   let attrs = item.split('34;:&#34')
+  //   debugger
+  //   console.log(datas[i])
+  // }
+  let escapeMap = new Map();
+  escapeMap.set('&#34;', '"');
+  escapeMap.set('&gt;', '>');
+  escapeMap.set('&#39;', "'");
+  escapeMap.set('&lt;', '<');
+  escapeMap.set('&quot;', '"');
+  escapeMap.set('&amp;', '&');
+</script> -->
 
-        <div id="landlord">
-            <div class="message" style="opacity:0"></div>
-            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
-        </div>
-        <div id="domainname" style="display:none">https://zyx006.github.io
-        </div>
-</body>
+<script src="/media/js/mouse/love.js"></script>
+
+
 
 </html>
-
-<script type="text/javascript">
-    var message_Path = '/live2d/'
-    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
-</script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js"></script>
-<script type="text/javascript" src="https://zyx006.github.io/media/live2d/js/message.js"></script>
-<script type="text/javascript">
-    loadlive2d("live2d", "https://zyx006.github.io/media/live2d/assets/tororo.model.json");
-</script>
-
-
-<script>
-    var bgchoice = $('#bgchoice').html();
-    var bg = $('#bg');
-    var bgurl = document.getElementById("bgurl").innerHTML;
-    if (bgchoice == 'default')
-        for (var i = 0; i < 3; i++)
-            bgurl = bgurl.replace("\\", "/");
-    bg.css("background", "url('" + bgurl + "')");
-
-    window.onload = function () {
-        aplayerbtnInit();
-    }
-</script>
-
-<script src="https://zyx006.github.io/media/js/index.js"></script>
