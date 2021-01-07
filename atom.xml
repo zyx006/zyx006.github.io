@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://czyx007.top</id>
     <title>君绾墨的blog</title>
-    <updated>2021-01-07T03:57:24.081Z</updated>
+    <updated>2021-01-07T04:04:46.159Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://czyx007.top"/>
     <link rel="self" href="https://czyx007.top/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://czyx007.top/post/han-jia-hui-gui-da-li-bao-ti-jie/">
         </link>
         <updated>2021-01-06T15:03:13.000Z</updated>
-        <content type="html"><![CDATA[<p>时间跨度：01-04 17:46:10 ~ 01-06 23:01:46</p>
+        <content type="html"><![CDATA[<p>时间跨度：01-04 17:46:10 - 01-06 23:01:46</p>
 <p>关键知识点：<strong>高精度</strong>，斐波那契数列</p>
 <p>部分新增知识点：</p>
 <ul>
