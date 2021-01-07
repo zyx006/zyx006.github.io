@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zyx006.github.io</id>
     <title>君绾墨的blog</title>
-    <updated>2021-01-03T13:33:58.103Z</updated>
+    <updated>2021-01-07T03:52:45.667Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zyx006.github.io"/>
     <link rel="self" href="https://zyx006.github.io/atom.xml"/>
@@ -11,20 +11,1494 @@
     <icon>https://zyx006.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 君绾墨的blog</rights>
     <entry>
+        <title type="html"><![CDATA[寒假回归大礼包题解]]></title>
+        <id>https://zyx006.github.io/post/han-jia-hui-gui-da-li-bao-ti-jie/</id>
+        <link href="https://zyx006.github.io/post/han-jia-hui-gui-da-li-bao-ti-jie/">
+        </link>
+        <updated>2021-01-06T15:03:13.000Z</updated>
+        <content type="html"><![CDATA[<p>时间跨度：01-04 17:46:10 ~ 01-06 23:01:46</p>
+<p>关键知识点：<strong>高精度</strong>，斐波那契数列</p>
+<p>部分新增知识点：</p>
+<ul>
+<li>C语言内置函数__builtin__popcount();</li>
+<li><strong>数字之间的关系</strong>，<strong>质数的性质</strong>（数论？）<!-- more --></li>
+</ul>
+<h1 id="t1-标题统计">T1 标题统计</h1>
+<p><a href="https://www.luogu.com.cn/problem/P5015">题目链接</a></p>
+<h3 id="题目解析">题目解析</h3>
+<p>获取一整行字符串后计算除空格和换行符以外的字符数即可</p>
+<h3 id="ac代码">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+//typedef long long ll;
+
+int main()
+{
+    string str;
+    getline(cin,str);
+    
+    int cnt = 0;
+    for(auto i:str)
+    if(i != ' ' &amp;&amp; i != '\n')
+        cnt++;
+    printf(&quot;%d&quot;,cnt);
+    return 0;
+} 
+</code></pre>
+<h1 id="t2-davor">T2 Davor</h1>
+<p><a href="https://www.luogu.com.cn/problem/P4956">题目链接</a></p>
+<h3 id="题目解析-2">题目解析</h3>
+<p>用等差数列求出每星期筹到的金钱总额乘以总周数52，若刚好等于n则输出并中断。<br>
+为了满足 x 尽可能大，k 尽可能小，应使x从100开始倒序循环。</p>
+<h3 id="ac代码-2">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+//typedef long long ll;
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+
+    for(int x = 100; x &gt;= 1; x--)
+    {
+        for(int k = 1;k &lt; 3000; k++)
+        {
+            int cnt = 52 * (x + x+6*k)*7/2;
+            if(cnt == n)
+            {
+                printf(&quot;%d\n%d&quot;,x,k);
+                return 0;
+            }
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="t3-语句解析">T3 语句解析</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1597">题目链接</a></p>
+<h3 id="题目解析-3">题目解析</h3>
+<p>按照题面所给的语句格式</p>
+<blockquote>
+<p>变量 := 变量或一位整数;<br>
+逐字扫描判断，以分号作为分隔符进行逐句赋值，未赋值的变量以初始值0作为终值。</p>
+</blockquote>
+<h3 id="ac代码-3">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+//typedef long long ll;
+
+int main()
+{
+    string str;
+    cin &gt;&gt; str;
+
+    int a = 0,b = 0,c = 0;
+    for(int i = 0; i &lt; str.length(); i++)
+    {
+        if(str[i] == 'a')
+        {
+            int j = i;
+            while(str[j] !=';')j++;
+            if(str[j-1] &gt;= '0' &amp;&amp; str[j-1] &lt;= '9')
+                a = (str[j-1]-'0');
+            else
+            {
+                if(str[j-1] == 'b')
+                    a = b;
+                else if(str[j-1] == 'c')
+                    a = c;
+            }
+            i = j;
+        }
+        else if(str[i] == 'b')
+        {
+            int j = i;
+            while(str[j] !=';')j++;
+            if(str[j-1] &gt;= '0' &amp;&amp; str[j-1] &lt;= '9')
+                b = (str[j-1]-'0');
+            else
+            {
+                if(str[j-1] == 'a')
+                    b = a;
+                else if(str[j-1] == 'c')
+                    b = c;
+            }
+            i = j;
+        }
+        else if(str[i] == 'c')
+        {
+            int j = i;
+            while(str[j] !=';')j++;
+            if(str[j-1] &gt;= '0' &amp;&amp; str[j-1] &lt;= '9')
+                c = (str[j-1]-'0');
+            else
+            {
+                if(str[j-1] == 'a')
+                    c = a;
+                else if(str[j-1] == 'b')
+                    c = b;
+            }
+            i = j;
+        }
+    }
+    printf(&quot;%d %d %d&quot;,a,b,c);
+    return 0;
+}
+</code></pre>
+<h1 id="t4-数楼梯">T4 数楼梯</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1255">题目链接</a></p>
+<h3 id="题目解析-4">题目解析</h3>
+<p>本题关键知识点：<strong>高精度</strong>，<strong>斐波那契数列</strong><br>
+从前几阶楼梯可以发现，上到每节楼梯的走法数分别为1,2,3,5，……，显然就是去掉第一项后的斐波那契列<br>
+但题目数据范围N &lt;= 5000,斐波那契数列的值呈指数级爆炸增长，因而要使用高精度防止数据溢出。</p>
+<h3 id="ac代码-4">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+//typedef long long ll;
+
+const int MAXN = 5010;
+
+int a[MAXN],b[MAXN],c[MAXN];
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+
+    if(n &lt; 3)
+        printf(&quot;%d&quot;,n);
+    else
+    {
+        int cnt = 1;
+        a[1] = 1,b[1] = 2;
+        for(int i = 3; i &lt;= n; i++)
+        {
+            for(int j = 1; j &lt;= cnt; j++)
+                c[j] = a[j]+b[j];
+            for(int j = 1; j &lt;= cnt; j++)
+            {
+                if(c[j] &gt; 9)
+                {
+                    c[j+1] += c[j]/10;
+                    c[j] %= 10;
+                    if(j+1 &gt; cnt)
+                        cnt++;
+                }
+            }
+            for(int j = 1; j &lt;= cnt; j++)
+                a[j] = b[j];
+            for(int j = 1; j &lt;= cnt; j++)
+                b[j] = c[j];
+        }
+        for(int i = cnt;i &gt; 0;i--)
+            printf(&quot;%d&quot;,b[i]);
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="t5-分数线划定">T5 分数线划定</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1068">题目链接</a></p>
+<h3 id="题目解析-5">题目解析</h3>
+<p>用结构体存储每名选手的报名号和成绩，然后依照提议解题即可，要注意cmp函数的写法。</p>
+<h3 id="ac代码-5">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+//typedef long long ll;
+
+struct peo
+{
+    int id,score;
+};
+
+bool cmp(const peo &amp;p1,const peo &amp;p2)
+{
+    if(p1.score != p2.score)
+        return p1.score &gt; p2.score;
+    else
+        return p1.id &lt; p2.id;
+}
+
+int main()
+{
+    int n,m;
+    scanf(&quot;%d %d&quot;,&amp;n,&amp;m);
+    int num = m * 1.5;
+    struct peo p[n];
+
+    for(int i = 0; i &lt; n; i++)
+        scanf(&quot;%d %d&quot;,&amp;p[i].id,&amp;p[i].score);
+    sort(p,p+n,cmp);
+
+    int line = p[num-1].score,cnt = 0;
+    for(int i = 0; p[i].score &gt;= line; i++)
+        cnt++;
+    printf(&quot;%d %d\n&quot;,line,cnt);
+    for(int i = 0; i &lt; cnt; i++)
+        printf(&quot;%d %d\n&quot;,p[i].id,p[i].score);
+
+    return 0;
+}
+</code></pre>
+<h1 id="t6-涂国旗">T6 涂国旗</h1>
+<p><a href="https://www.luogu.com.cn/problem/P3392">题目链接</a></p>
+<h3 id="题目解析-6">题目解析</h3>
+<p>预处理存储每行R/W/B三种颜色的块数，之后暴力O(n^2)枚举前两种颜色的行数(第三种颜色为剩下的行数)，用m减去某行某颜色的块数既得该行的成本，取得每次成本总和的最小值即可。</p>
+<h3 id="ac代码-6">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+//typedef long long ll;
+
+struct color
+{
+    int white,blue,red;
+};
+
+int main()
+{
+    int n,m;
+    scanf(&quot;%d %d&quot;,&amp;n,&amp;m);
+    
+    char ch[n][m];
+    struct color c[n];
+
+    for(int i = 0; i &lt; n; i++)
+    {
+        int w = 0,b = 0,r = 0;
+        for(int j = 0; j &lt; m; j++)
+        {
+            scanf(&quot; %c&quot;,&amp;ch[i][j]);
+            switch(ch[i][j])
+            {
+                case 'W':
+                    w++;
+                    break;
+                case 'R':
+                    r++;
+                    break;
+                case 'B':
+                    b++;
+                    break;
+            }
+        }
+        c[i].white = w;
+        c[i].blue = b;
+        c[i].red = r;
+    }
+
+    int cnt = 1e7;
+    for(int i = 1; i &lt;= n-2; i++)
+    {
+        for(int j = i+1; j &lt;= n-1; j++)
+        {
+            int sum = 0;
+            for(int k = 1; k &lt;= i; k++)
+                sum += (m-c[k-1].white);
+            for(int k = i+1; k &lt;= j; k++)
+                sum += (m-c[k-1].blue);
+            for(int k = j+1; k &lt;= n; k++)
+                sum += (m-c[k-1].red);
+            cnt = min(cnt,sum);
+        }
+    }
+    printf(&quot;%d&quot;,cnt);
+    return 0;
+}
+</code></pre>
+<h1 id="t7-拼数">T7 拼数</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1012">题目链接</a></p>
+<h3 id="题目解析-7">题目解析</h3>
+<p>将所有数字按字典序顺序降序排列后拼接即可。要注意cmp函数不能直接判断两字符串<br>
+<s>return s1 &gt; s2;</s><br>
+<u>return s1+s2 &gt; s2+s1;</u></p>
+<blockquote>
+<p>详见代码中注释</p>
+</blockquote>
+<h3 id="ac代码-7">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+//typedef long long ll;
+
+vector&lt;string&gt; v; 
+
+bool cmp(const string &amp;s1,const string &amp;s2)
+{
+    /*
+    若用s1 &gt; s2,则结果为321 32 -&gt;32132,但最大应为32321
+    使用s1+s2 &gt; s2+s1则可避免这种32132&gt;32321的情况 
+    */
+    return s1+s2 &gt; s2+s1;
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(int i = 0;i &lt; n;i++)
+    {
+        string str;
+        cin &gt;&gt; str;
+        v.push_back(str);
+    }
+    sort(v.begin(),v.end(),cmp);
+    for(auto i:v)
+        cout &lt;&lt; i;
+    return 0;
+} 
+</code></pre>
+<h1 id="t8-烤鸡">T8 烤鸡</h1>
+<p><a href="https://www.luogu.com.cn/problem/P2089">题目链接</a></p>
+<h3 id="题目解析-8">题目解析</h3>
+<p>直接暴力枚举10种配料的所有搭配方案，若质量总和等于n则保存，等待输出。注意每种配料的质量都不能为0。<br>
+(由于配料质量和的最大值只有30，所以n &gt; 30的可以直接输出0)</p>
+<h3 id="ac代码-8">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;vector&gt;
+using namespace std;
+//typedef long long ll;
+
+vector&lt;vector&lt;int&gt; &gt; v;
+vector&lt;int&gt; vs;
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    
+    int cnt = 0;
+    for(int q = 1;q &lt;= 3;q++)
+    for(int w = 1;w &lt;= 3;w++)
+    for(int e = 1;e &lt;= 3;e++)
+    for(int r = 1;r &lt;= 3;r++)
+    for(int t = 1;t &lt;= 3;t++)
+    for(int y = 1;y &lt;= 3;y++)
+    for(int u = 1;u &lt;= 3;u++)
+    for(int i = 1;i &lt;= 3;i++)
+    for(int o = 1;o &lt;= 3;o++)
+    for(int p = 1;p &lt;= 3;p++)
+        if(q+w+e+r+t+y+u+i+o+p == n)
+        {
+            vs.push_back(q);
+            vs.push_back(w);
+            vs.push_back(e);
+            vs.push_back(r);
+            vs.push_back(t);
+            vs.push_back(y);
+            vs.push_back(u);
+            vs.push_back(i);
+            vs.push_back(o);
+            vs.push_back(p);
+            v.push_back(vs);
+            vs.clear();
+            cnt++;
+        }
+    
+    printf(&quot;%d\n&quot;,cnt);
+    for(auto i:v)
+    {
+        for(auto j:i)
+            printf(&quot;%d &quot;,j);
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+} 
+</code></pre>
+<h1 id="t9-独木桥">T9 独木桥</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1007">题目链接</a></p>
+<h3 id="题目解析-9">题目解析</h3>
+<p>首先，不用考虑题目中的这一因素的影响：</p>
+<blockquote>
+<p>但是，如果两个士兵面对面相遇，他们无法彼此通过对方，于是就分别转身，继续行走。转身不需要任何的时间。</p>
+</blockquote>
+<p>引用洛谷题解中很形象的两个例子：</p>
+<blockquote>
+<p>首先自行脑补一下，假装你正在20000米高空的轰炸机上用高倍显微镜望远镜默默欣赏士兵离开，你会发现什么东西？一堆花花绿绿的迷彩服在移动。（不是鬼片！不是鬼片！不是鬼片！重要的事情说三遍）<br>
+那么当两个士兵撞在一起时，从你的视角看会发生什么？当然他们认为他们都掉头了，但因为你在特高的地方，你会认为他们“穿过”了对方。换言之，这与他们相互穿过并没有任何区别。</p>
+</blockquote>
+<blockquote>
+<p>两个人相遇转身，相当于交换灵魂后继续走</p>
+</blockquote>
+<p>那么问题就很简单了，最大值就是最靠近端点的两个人各自向对方方向走下桥,时间较长的那个人的时间，最小值就是所有人走完桥的时间的最小值的最大值。</p>
+<h3 id="ac代码-9">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+//typedef long long ll;
+
+int main()
+{
+    int l,n;
+    scanf(&quot;%d %d&quot;,&amp;l,&amp;n);
+    
+    int pos[n]={0};
+    for(int i = 0;i &lt; n;i++)
+        scanf(&quot;%d&quot;,&amp;pos[i]);
+    sort(pos,pos+n,greater&lt;int&gt;());
+    int ma = max(pos[0],l-pos[n-1]+1);
+    int mi = 0;
+    for(int i = 0;i &lt; n;i++)
+    {
+        int tmp = min(pos[i],l-pos[i]+1);
+        mi = max(tmp,mi);
+    }
+    printf(&quot;%d %d&quot;,mi,ma);
+    return 0;
+} 
+</code></pre>
+<h1 id="t10-first-step-ファーストステップ">T10 First Step (ファーストステップ)</h1>
+<p><a href="https://www.luogu.com.cn/problem/P3654">题目链接</a></p>
+<h3 id="题目解析-10">题目解析</h3>
+<p>枚举每个可站点，判断该点向右方和向下方各有多少种站位方式<br>
+要注意k=1的情况下，横着站和竖着站一样，因而要进行特判，此时站位方式数量就是可站点的数量。</p>
+<h3 id="ac代码-10">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+//typedef long long ll;
+
+int main()
+{
+    int r,c,k;
+    scanf(&quot;%d %d %d&quot;,&amp;r,&amp;c,&amp;k);
+
+    int po = 0;
+    char gym[r][c];
+    for(int i = 0; i &lt; r; i++)
+        for(int j = 0; j &lt; c; j++)
+        {
+            scanf(&quot; %c&quot;,&amp;gym[i][j]);
+            if(gym[i][j] == '.')
+                po++;
+        }
+
+    if(k == 1)
+    {
+        printf(&quot;%d&quot;,po);
+        return 0;
+    }
+    int cnt = 0,sum = 0;
+    for(int i = 0; i &lt; r; i++)
+    {
+        for(int j = 0; j &lt; c; j++)
+        {
+            if(gym[i][j] == '.')
+            {
+                if(i &lt; r-1)
+                {
+                    sum = 0;
+                    for(int q = j; q &lt; c; q++)
+                    {
+                        if(gym[i][q] == '.')
+                            sum++;
+                        else
+                            break;
+                        if(sum == k)
+                        {
+                            cnt++;
+                            break;
+                        }
+                    }
+                    sum = 0;
+                    for(int q = i; q &lt; r; q++)
+                    {
+                        if(gym[q][j] == '.')
+                            sum++;
+                        else
+                            break;
+                        if(sum == k)
+                        {
+                            cnt++;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    sum = 0;
+                    for(int q = j; q &lt; c; q++)
+                    {
+                        if(gym[i][q] == '.')
+                            sum++;
+                        else
+                            break;
+                        if(sum == k)
+                        {
+                            cnt++;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    printf(&quot;%d&quot;,cnt);
+    return 0;
+}
+</code></pre>
+<h1 id="t11-蜜蜂路线">T11 蜜蜂路线</h1>
+<p><a href="https://www.luogu.com.cn/problem/P2437">题目链接</a></p>
+<h3 id="题目解析-11">题目解析</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1255">类似题目 T4数楼梯</a><br>
+本题需用到<strong>高精度</strong>和<strong>斐波那契数列</strong><br>
+不同的是本题中最终结果并不是从斐波那契数列第一项加起，它的起始项(左端点)是变化的。</p>
+<h3 id="ac代码-11">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;cstring&gt;
+using namespace std;
+//typedef long long ll;
+
+const int MAXN = 5010;
+
+int a[MAXN]= {1,1},b[MAXN]= {1},c[MAXN];
+
+int main()
+{
+    int m,n;
+    scanf(&quot;%d %d&quot;,&amp;m,&amp;n);
+
+    for(int i = m+1; i &lt;= n; i++)
+    {
+        for(int j = 0; j &lt;= a[0]; j++)
+            c[j] = a[j];
+        for(int j = 1; j &lt;= a[0]; j++)
+        {
+            a[j] += b[j];
+            a[j+1] += a[j]/10;
+            a[j] %= 10;
+        }
+        while(a[a[0]+1]&gt;0)
+            a[0]++;
+        memset(b,sizeof(b),0);
+        for(int j = 0; j &lt;= c[0]; j++)
+            b[j] = c[j];
+    }
+    for(int i = a[0]; i &gt;= 1; i--)
+        printf(&quot;%d&quot;,a[i]);
+    return 0;
+}
+</code></pre>
+<h1 id="t12-最大公约数和最小公倍数问题">T12 最大公约数和最小公倍数问题</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1029">题目链接</a></p>
+<h3 id="题目解析-12">题目解析</h3>
+<p>以x,y为端点进行O(n^2) 枚举,由于本题数据范围是10^5,为了防止TLE需要进行优化，只用枚举max(x,y)的所有因子即可。</p>
+<h3 id="ac代码-12">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+using namespace std;
+//typedef long long ll;
+
+vector&lt;int&gt; v;
+void getnum(int a);
+
+int main()
+{
+    int x,y;
+    scanf(&quot;%d %d&quot;,&amp;x,&amp;y);
+    
+    getnum(max(x,y));
+    
+    int cnt = 0,size = v.size();
+    for(int i = 0;i &lt; size;i++)
+    {
+        for(int j = size-1;j &gt;= 0;j--)
+        {
+            int gnum = __gcd(v[i],v[j]);
+            int LCD = (v[i] * v[j]) / gnum;
+            if(gnum == x &amp;&amp; LCD == y)
+                cnt++;
+        }
+    }
+    printf(&quot;%d&quot;,cnt);
+    return 0;
+}
+
+void getnum(int a)
+{
+    for(int i = 1;i &lt;= a;i++)
+        if(a % i == 0)
+            v.push_back(i);
+}
+</code></pre>
+<h1 id="t13-种田">T13 种田</h1>
+<p><a href="https://www.luogu.com.cn/problem/P2660">题目链接</a></p>
+<h3 id="题目解析-13">题目解析</h3>
+<p><a href="https://www.luogu.com.cn/problem/P2241">类似题目：第四周提单 统计方形</a></p>
+<p>不同的是，上题是统计所有方形的数量，而这题是每次切割最大正方形，每次以最短边为边长切割，体力值即为每次所切割的正方形的周长之和。但单单这样写会在最后一个测试点被10^16的数据卡TLE，只能拿90分，因而要进行优化，不能一个正方形一个正方形的切，要一次切多个，也就是切max(x,y)/min(x,y)个。</p>
+<h3 id="ac代码-13">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+typedef long long ll;
+
+int main()
+{
+    ll n,m;
+    scanf(&quot;%lld %lld&quot;,&amp;n,&amp;m);
+
+    ll res = 0;
+    while(n != 0 &amp;&amp; m != 0)
+    {
+        ll mi = min(n,m);
+        if(n &lt; m)
+        {
+            res += 4 * (m/mi) * mi;
+            m %= mi;
+        }
+        else
+        {
+            res += 4 * (n/mi) * mi;
+            n %= mi;
+        }
+    }
+    printf(&quot;%lld&quot;,res);
+    return 0;
+}
+</code></pre>
+<h1 id="t14-混合牛奶-mixing-milk">T14 混合牛奶 Mixing Milk</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1208">题目链接</a></p>
+<h3 id="题目解析-14">题目解析</h3>
+<p>用结构体存储每位农民的单价和最大量，按单价从低到高进行排序，依次购买直至购买量等于所需量时即求出最小费用。</p>
+<h3 id="ac代码-14">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+//typedef long long ll;
+
+struct farmer{
+    int price,sum;	
+};
+
+bool cmp(const farmer &amp;f1,const farmer &amp;f2)
+{
+    return f1.price &lt; f2.price;
+}
+
+int main()
+{
+    int n,m;
+    scanf(&quot;%d %d&quot;,&amp;n,&amp;m);
+    struct farmer f[m];
+    
+    for(int i = 0;i &lt; m;i++)
+        scanf(&quot;%d %d&quot;,&amp;f[i].price,&amp;f[i].sum);
+    sort(f,f+m,cmp);
+    
+    int su = 0,money = 0;
+    for(int i = 0;i &lt; m;i++)
+    {
+        if(su + f[i].sum &lt;= n)
+        {
+            su += f[i].sum;
+            money += f[i].price * f[i].sum;
+        }
+        else
+        {
+            money += f[i].price * (n - su);
+            break;
+        }
+    }
+    printf(&quot;%d&quot;,money);
+    return 0;
+} 
+</code></pre>
+<h1 id="t15-排队">T15 排队</h1>
+<p><a href="https://www.luogu.com.cn/problem/P5412">题目链接</a></p>
+<h3 id="题目解析-15">题目解析</h3>
+<p>结构体存储按身高从矮到高排序，最后用cout输出即可。</p>
+<h3 id="ac代码-15">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+//typedef long long ll;
+
+struct stu
+{
+    int sex;
+    double height;
+};
+
+bool cmp(const stu &amp;s1,const stu &amp;s2)
+{
+    return s1.height &lt; s2.height;
+}
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;,&amp;t);
+    while(t--)
+    {
+        int n;
+        scanf(&quot;%d&quot;,&amp;n);
+        struct stu s[n];
+        for(int i = 0; i &lt; n; i++)
+            scanf(&quot;%d&quot;,&amp;s[i].sex);
+        for(int i = 0; i &lt; n; i++)
+            scanf(&quot;%lf&quot;,&amp;s[i].height);
+        
+        sort(s,s+n,cmp);
+        for(int i = 0; i &lt; n; i++)
+            if(s[i].sex == 0)
+                cout &lt;&lt; s[i].height &lt;&lt; ' ';
+        printf(&quot;\n&quot;);
+        for(int i = 0; i &lt; n; i++)
+            if(s[i].sex == 1)
+                cout &lt;&lt; s[i].height &lt;&lt; ' ';
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="t16-小a的糖果">T16 小A的糖果</h1>
+<p><a href="https://www.luogu.com.cn/problem/P3817">题目链接</a></p>
+<h3 id="题目解析-16">题目解析</h3>
+<p>从左到右依次遍历，若左右之和大于x则将<strong>右侧数</strong>减去<strong>两数之和与x的差</strong> ，结果即为每次该差的总和。</p>
+<h3 id="ac代码-16">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+typedef long long ll;
+
+int main()
+{
+    ll n,x;
+    scanf(&quot;%lld %lld&quot;,&amp;n,&amp;x);
+    ll num[n] = {0};
+    
+    for(int i = 0;i &lt; n;i++)
+        scanf(&quot;%lld&quot;,&amp;num[i]);
+        
+    ll cnt = 0;
+    for(ll i = 0;i &lt; n-1;i++)
+    {
+        if(num[i] + num[i+1] &gt; x)
+        {
+            cnt += num[i]+num[i+1]-x;
+            num[i+1] -= num[i]+num[i+1]-x;
+        }
+    }
+    printf(&quot;%lld&quot;,cnt);
+    return 0;
+} 
+</code></pre>
+<h1 id="t17-阶乘之和">T17 阶乘之和</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1009">题目链接</a></p>
+<h3 id="题目解析-17">题目解析</h3>
+<p><strong>高精度加法</strong>与<strong>高精度乘法</strong>结合</p>
+<h3 id="ac代码-17">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+//typedef long long ll;
+
+const int MAXN = 2e3;
+
+int a[MAXN]= {1},b[MAXN];
+
+void plu(int a[],int b[])
+{
+    int more = 0;
+    for(int i = 0; i &lt; 1000; i++)
+    {
+        b[i] += a[i] + more;
+        more = b[i]/10;
+        b[i] %= 10;
+    }
+}
+
+void mul(int a[],int b)
+{
+    int more = 0;
+    for(int i = 0; i &lt; 1000; i++)
+    {
+        a[i] = a[i] * b + more;
+        more = a[i]/10;
+        a[i] %= 10;
+    }
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(int i = 1; i &lt;= n; i++)
+    {
+        mul(a,i);
+        plu(a,b);
+    }
+
+    int flag = 0;
+    for(int i = 999; i &gt;= 0; i--)
+    {
+        if(b[i])
+            flag = 1;
+        if(flag)
+            printf(&quot;%d&quot;,b[i]);
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="t18-找筷子">T18   找筷子</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1469">题目链接</a></p>
+<h3 id="题目解析-18">题目解析</h3>
+<p>利用位运算异或的性质即可，偶数个相同的数异或结果为0，因而将所有筷子长度异或起来的结果即为落单的筷子的长度。</p>
+<h3 id="ac代码-18">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+//typedef long long ll;
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    int len,res;
+    for(int i = 0;i &lt; n;i++)
+    {
+        scanf(&quot;%d&quot;,&amp;len);
+        if(i &gt; 0)
+            res ^= len;
+        else if(i == 0)
+            res = len;
+    }
+    printf(&quot;%d&quot;,res);
+    return 0;
+} 
+</code></pre>
+<h1 id="t19-两只塔姆沃斯牛-the-tamworth-two">T19 两只塔姆沃斯牛 The Tamworth Two</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1518">题目链接</a></p>
+<h3 id="题目解析-19">题目解析</h3>
+<p>结构体存储坐标和方向，不断循环即可，若某次移动结束后坐标重合即相遇，输出时间（即循环次数），若循环次数过大时（例10^6次）仍未相遇，即可判定永远不会相遇。</p>
+<h3 id="ac代码-19">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+//typedef long long ll;
+
+char map[10][10];
+
+struct farmer
+{
+    int x,y;
+    char dire = 'n';//East South West North
+} f;
+
+struct cow
+{
+    int x,y;
+    char dire = 'n';
+} c;
+
+int main()
+{
+    for(int i = 0; i &lt; 10; i++)
+        for(int j = 0; j &lt; 10; j++)
+        {
+            scanf(&quot; %c&quot;,&amp;map[i][j]);
+            if(map[i][j] == 'F')
+            {
+                f.x = i;
+                f.y = j;
+            }
+            else if(map[i][j] == 'C')
+            {
+                c.x = i;
+                c.y = j;
+            }
+        }
+
+    int cnt = 0;
+    while(!(f.x == c.x &amp;&amp; f.y == c.y))
+    {
+        switch(f.dire)
+        {
+            case 'n':
+                if(f.x != 0)
+                {
+                    if(map[f.x-1][f.y] != '*')
+                        f.x--;
+                    else
+                        f.dire = 'e';
+                }
+                else
+                    f.dire = 'e';
+                break;
+            case 'e':
+                if(f.y != 9)
+                {
+                    if(map[f.x][f.y+1] != '*')
+                        f.y++;
+                    else
+                        f.dire = 's';
+                }
+                else
+                    f.dire = 's';
+                break;
+            case 's':
+                if(f.x != 9)
+                {
+                    if(map[f.x+1][f.y] != '*')
+                        f.x++;
+                    else
+                        f.dire = 'w';
+                }
+                else
+                    f.dire = 'w';
+                break;
+            case 'w':
+                if(f.y != 0)
+                {
+                    if(map[f.x][f.y-1] != '*')
+                        f.y--;
+                    else
+                        f.dire = 'n';
+                }
+                else
+                    f.dire = 'n';
+                break;
+        }
+        switch(c.dire)
+        {
+            case 'n':
+                if(c.x != 0)
+                {
+                    if(map[c.x-1][c.y] != '*')
+                        c.x--;
+                    else
+                        c.dire = 'e';
+                }
+                else
+                    c.dire = 'e';
+                break;
+            case 'e':
+                if(c.y != 9)
+                {
+                    if(map[c.x][c.y+1] != '*')
+                        c.y++;
+                    else
+                        c.dire = 's';
+                }
+                else
+                    c.dire = 's';
+                break;
+            case 's':
+                if(c.x != 9)
+                {
+                    if(map[c.x+1][c.y] != '*')
+                        c.x++;
+                    else
+                        c.dire = 'w';
+                }
+                else
+                    c.dire = 'w';
+                break;
+            case 'w':
+                if(c.y != 0)
+                {
+                    if(map[c.x][c.y-1] != '*')
+                        c.y--;
+                    else
+                        c.dire = 'n';
+                }
+                else
+                    c.dire = 'n';
+                break;
+        }
+        cnt++;
+        if(cnt &gt; 1e6)
+        {
+            printf(&quot;0&quot;);
+            return 0;
+        }
+    }
+    printf(&quot;%d&quot;,cnt);
+    return 0;
+}
+</code></pre>
+<h1 id="t20-编码">T20 编码</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1246">题目链接</a></p>
+<h3 id="题目解析-20">题目解析</h3>
+<p>暴力枚举判断是否相等即可，要注意字母按升序排列，也就是不可能出现zoo之类的单词<br>
+<s>刚刚才发现我读入字符串写的竟然是scanf(&quot;%s&quot;,&amp;str);竟然还AC了，离谱，编译器之前竟然没报警告</s></p>
+<h3 id="ac代码-20">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;cstring&gt;
+using namespace std;
+//typedef long long ll;
+
+int main()
+{
+    int cnt = 1;
+    char str[7],s[7];
+    
+    scanf(&quot;%s&quot;,str);
+    
+    for(char i = 'a'; i &lt;= 'z'; i++)
+    {
+        s[1] = '\0';
+        s[0] = i;
+        if(strcmp(str,s) == 0)
+        {
+            printf(&quot;%d&quot;,cnt);
+            return 0;
+        }
+        cnt++;
+    }
+
+    for(char i = 'a'; i &lt;= 'y'; i++)
+        for(char j = i+1; j &lt;= 'z'; j++)
+        {
+            s[2] = '\0';
+            s[1] = j;
+            s[0] = i;
+            if(strcmp(str,s) == 0)
+            {
+                printf(&quot;%d&quot;,cnt);
+                return 0;
+            }
+            cnt++;
+        }
+
+    for(char i = 'a'; i &lt;= 'x'; i++)
+        for(char j = i+1; j &lt;= 'y'; j++)
+            for(char k = j+1; k &lt;= 'z'; k++)
+            {
+                s[3] = '\0';
+                s[2] = k;
+                s[1] = j;
+                s[0] = i;
+                if(strcmp(str,s) == 0)
+                {
+                    printf(&quot;%d&quot;,cnt);
+                    return 0;
+                }
+                cnt++;
+            }
+
+    for(char i = 'a'; i &lt;= 'w'; i++)
+        for(char j = i+1; j &lt;= 'x'; j++)
+            for(char k = j+1; k &lt;= 'y'; k++)
+                for(char q = k+1; q &lt;= 'z'; q++)
+                {
+                    s[4] = '\0';
+                    s[3] = q;
+                    s[2] = k;
+                    s[1] = j;
+                    s[0] = i;
+                    if(strcmp(str,s) == 0)
+                    {
+                        printf(&quot;%d&quot;,cnt);
+                        return 0;
+                    }
+                    cnt++;
+                }
+
+
+    for(char i = 'a'; i &lt;= 'v'; i++)
+        for(char j = i+1; j &lt;= 'w'; j++)
+            for(char k = j+1; k &lt;= 'x'; k++)
+                for(char q = k+1; q &lt;= 'y'; q++)
+                    for(char w = q+1; w &lt;= 'z'; w++)
+                    {
+                        s[5] = '\0';
+                        s[4] = w;
+                        s[3] = q;
+                        s[2] = k;
+                        s[1] = j;
+                        s[0] = i;
+                        if(strcmp(str,s) == 0)
+                        {
+                            printf(&quot;%d&quot;,cnt);
+                            return 0;
+                        }
+                        cnt++;
+                    }
+
+    for(char i = 'a'; i &lt;= 'u'; i++)
+        for(char j = i+1; j &lt;= 'v'; j++)
+            for(char k = j+1; k &lt;= 'w'; k++)
+                for(char q = k+1; q &lt;= 'x'; q++)
+                    for(char w = q+1; w &lt;= 'y'; w++)
+                        for(char e = w+1; e &lt;= 'z'; e++)
+                        {
+                            s[6] = '\0';
+                            s[5] = e;
+                            s[4] = w;
+                            s[3] = q;
+                            s[2] = k;
+                            s[1] = j;
+                            s[0] = i;
+                            if(strcmp(str,s) == 0)
+                            {
+                                printf(&quot;%d&quot;,cnt);
+                                return 0;
+                            }
+                            cnt++;
+                        }
+    printf(&quot;0&quot;);
+    return 0;
+}
+</code></pre>
+<h1 id="t21-帮贡排序">T21 帮贡排序</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1786">题目链接</a></p>
+<h3 id="题目解析-21">题目解析</h3>
+<p>按照题意即可，要注意调整职位和输出时的排序方式不同，要写两个cmp函数，调整职位和输出前要分别调用一次sort函数。<br>
+<s>一定要注意职位的大小写，不然一个字母的差别就是全WA与全AC的差别</s></p>
+<h3 id="ac代码-21">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+//typedef long long ll;
+
+enum prof
+{
+    BangZhong,JingYing,TangZhu,ZhangLao,HuFa,FuBangZhu,BangZhu
+};
+
+struct org
+{
+    string name;
+    int pro,con,level,index;
+};
+
+bool cmp1(const org &amp;o1,const org &amp;o2)
+{
+    if(o1.con != o2.con)
+        return o1.con &gt; o2.con;
+    else
+        return o1.index &lt; o2.index;
+}
+
+bool cmp2(const org &amp;o1,const org &amp;o2)
+{
+    if(o1.pro != o2.pro)
+        return o1.pro &gt; o2.pro;
+    else if(o1.level != o2.level)
+        return o1.level &gt; o2.level;
+    else
+        return o1.index &lt; o2.index;
+}
+
+int bz,fbz,hf,zl,tz,jy,baz;
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    struct org o[n];
+    for(int i = 0; i &lt; n; i++)
+    {
+        string pr;
+        cin &gt;&gt; o[i].name &gt;&gt; pr;
+        scanf(&quot;%d %d&quot;,&amp;o[i].con,&amp;o[i].level);
+        o[i].index = i;
+        if(pr == &quot;BangZhu&quot;)
+            o[i].pro = BangZhu;
+        else if(pr == &quot;FuBangZhu&quot;)
+            o[i].pro = FuBangZhu;
+        else if(pr == &quot;HuFa&quot;)
+            o[i].pro = HuFa;
+        else if(pr == &quot;ZhangLao&quot;)
+            o[i].pro = ZhangLao;
+        else if(pr == &quot;TangZhu&quot;)
+            o[i].pro = TangZhu;
+        else if(pr == &quot;JingYing&quot;)
+            o[i].pro = JingYing;
+        else if(pr == &quot;BangZhong&quot;)
+            o[i].pro = BangZhong;
+    }
+    
+    sort(o,o+n,cmp1);
+    for(int i = 0; i &lt; n; i++)
+    {
+        if(o[i].pro &lt;= HuFa &amp;&amp; o[i].name != &quot;absi2011&quot;)
+        {
+            if(hf &lt; 2)
+            {
+                o[i].pro = HuFa;
+                hf++;
+            }
+            else if(zl &lt; 4)
+            {
+                o[i].pro = ZhangLao;
+                zl++;
+            }
+            else if(tz &lt; 7)
+            {
+                o[i].pro = TangZhu;
+                tz++;
+            }
+            else if(jy &lt; 25)
+            {
+                o[i].pro = JingYing;
+                jy++;
+            }
+            else
+            {
+                o[i].pro = BangZhong;
+                baz++;
+            }
+        }
+    }
+    
+    sort(o,o+n,cmp2);
+    for(auto i:o)
+    {
+        cout &lt;&lt; i.name &lt;&lt; &quot; &quot;;
+        switch(i.pro)
+        {
+            case BangZhu:
+                printf(&quot;BangZhu&quot;);/*打成Bangzhu导致全WA，改正后全AC*/
+                break;
+            case FuBangZhu:
+                printf(&quot;FuBangZhu&quot;);
+                break;
+            case HuFa:
+                printf(&quot;HuFa&quot;);
+                break;
+            case ZhangLao:
+                printf(&quot;ZhangLao&quot;);
+                break;
+            case TangZhu:
+                printf(&quot;TangZhu&quot;);
+                break;
+            case JingYing:
+                printf(&quot;JingYing&quot;);
+                break;
+            case BangZhong:
+                printf(&quot;BangZhong&quot;);
+                break;
+        }
+        printf(&quot; %d\n&quot;,i.level);
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="t22-数列找不同">T22 数列找不同</h1>
+<p><a href="https://www.luogu.com.cn/problem/P3901">题目链接</a></p>
+<h3 id="题目解析-22">题目解析</h3>
+<p>预处理不断循环找出每个区间内各数互不相同的最长区间，每次固定右端点找出最小左端点，若询问的左端点小于对应的最小左端点即可判断存在相同的数。</p>
+<h3 id="ac代码-22">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+//typedef long long ll;
+
+const int MAXN = 1e6;
+
+int num[MAXN],a[MAXN];//num[i]-&gt;以第i个数为右端点时左端点的最小值
+
+int main()
+{
+    int n,q;
+    scanf(&quot;%d %d&quot;,&amp;n,&amp;q);
+
+    int k;
+    for(int i = 1; i &lt;= n; i++)
+    {
+        scanf(&quot;%d&quot;,&amp;k);
+        num[i] = max(num[i-1],a[k]+1);
+        a[k] = i;
+    }
+    while(q--)
+    {
+        int l,r;
+        scanf(&quot;%d %d&quot;,&amp;l,&amp;r);
+        if(num[r] &lt;= l)
+            printf(&quot;Yes\n&quot;);
+        else
+            printf(&quot;No\n&quot;);
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="t23-倒水">T23 倒水</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1582">题目链接</a></p>
+<h3 id="题目解析-23">题目解析</h3>
+<p><a href="https://www.luogu.com.cn/problem/solution/P1582"><s>洛谷题解里果然都是神犇</s></a></p>
+<p>新增知识点：</p>
+<blockquote>
+<p>C语言内置函数： __builtin__popcount(); 返回参数在二进制下1的个数</p>
+</blockquote>
+<p>复习知识点：</p>
+<blockquote>
+<p>位运算中 n&amp;-n 表示n在二进制中最后一个1所代表的值</p>
+</blockquote>
+<p>因为所有的水都是由两份相同的水合并而成的，因此每瓶水的体积一定是2^i（i ∈ N）升，最后保留k个瓶子，那么最后总的升数的二进制表示中，1的个数一定&lt;=k。</p>
+<table>
+<thead>
+<tr>
+<th>合并前</th>
+<th>二进制</th>
+<th>合并后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1个瓶子</td>
+<td>1</td>
+<td>1个瓶子</td>
+</tr>
+<tr>
+<td>2个瓶子</td>
+<td>10</td>
+<td>2个瓶子</td>
+</tr>
+<tr>
+<td>3个瓶子</td>
+<td>11</td>
+<td>3个瓶子</td>
+</tr>
+<tr>
+<td>4个瓶子</td>
+<td>100</td>
+<td>4个瓶子</td>
+</tr>
+<tr>
+<td>5个瓶子</td>
+<td>101</td>
+<td>5个瓶子</td>
+</tr>
+<tr>
+<td>6个瓶子</td>
+<td>110</td>
+<td>6个瓶子</td>
+</tr>
+<tr>
+<td>7个瓶子</td>
+<td>111</td>
+<td>7个瓶子</td>
+</tr>
+<tr>
+<td>8个瓶子</td>
+<td>1000</td>
+<td>8个瓶子</td>
+</tr>
+<tr>
+<td>……</td>
+<td>……</td>
+<td>……</td>
+</tr>
+</tbody>
+</table>
+<p>由图显然，n个有水的瓶子，最后合并成的瓶子个数，就是这个数转成二进制1的个数。</p>
+<h3 id="ac代码-23">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+//typedef long long ll;
+
+int main()
+{
+    int n,k,res = 0;
+    scanf(&quot;%d %d&quot;,&amp;n,&amp;k);
+    while(__builtin_popcount(n) &gt; k)
+    {
+        res += n&amp;(-n);
+        n += n&amp;(-n);
+    }
+    printf(&quot;%d&quot;,res);
+    return 0;
+}
+</code></pre>
+<h1 id="t24-cities-and-states-s">T24 Cities and States S</h1>
+<p><a href="https://www.luogu.com.cn/problem/P3405">题目链接</a></p>
+<h3 id="题目解析-24">题目解析</h3>
+<p>题目中<strong>特殊的一对</strong>类似于成对的飞地，显然在一对飞地中，其中一方的CS（City State）代码等于另一方的SC（State City）代码，进而存储一方的CS就可被另一方的SC吻合读取，特殊对数加一。要注意City代码与State代码相等的<s>本地</s>特殊城市。</p>
+<h3 id="ac代码-24">AC代码</h3>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;map&gt;
+using namespace std;
+//typedef long long ll;
+
+map&lt;string,int&gt; mp;
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    
+    int cnt = 0;
+    string city,state,cs,sc;
+    for(int i = 0;i &lt; n;i++)
+    {
+        cin &gt;&gt; city &gt;&gt; state;
+        cs = city.substr(0,2) + state;
+        sc = state + city.substr(0,2);
+        cnt += mp[sc];
+        if(cs == sc)
+            cnt -= mp[cs];
+        mp[cs]++;
+    }
+    printf(&quot;%d&quot;,cnt);
+    return 0;
+} 
+</code></pre>
+<h1 id="t25-dreamoon-and-sets">T25 Dreamoon and Sets</h1>
+<p><a href="https://www.luogu.com.cn/problem/CF476D">题目链接</a></p>
+<h3 id="题目解析-25">题目解析</h3>
+<p><s>第一道紫题</s><br>
+<s>我觉得我得重读小学二年级</s><br>
+枚举失败的我从洛谷题解中获取到了一些奇怪的知识：</p>
+<blockquote>
+<p>互质的一组数中a,b,c,d的值越接近,就能使最大值越小。<br>
+相邻的两个正整数数是互质的，相邻的两个奇数也是互质的。<br>
+连续n个正整数必有一个数能被n整除，不考虑1,2</p>
+</blockquote>
+<ul>
+<li>a,b,c,d互质，所以a,b,c,d中最多有一个偶数 为了让四个数的值更接近，我们不妨先假设有1个偶数，3个奇数。</li>
+<li>进一步转换，我们可以将a,b,c,d设为x,x+m1,x+m2,x+m3.</li>
+<li>因此我们先尝试令m1=1,m2=2,即四元组中前三个数为x,x+1,x+2。由于四元组中最多只有一个偶数，故x为奇数，根据以上易证的结论可知这三个数一定互质。</li>
+<li>考虑x是奇数，那么(x,x+1,x+2,x+4)<strong>一定</strong>满足要求，且不能更小。考虑x是偶数，那么(x,x+1,x+3,x+5)<strong>不一定</strong>满足要求，而且不能更小。显然x取奇数时是最优的。</li>
+<li>最大数为 (n*6-1)*k</li>
+<li>第一个数从1开始选，同时要保证所以四元组的第一个数为基数，每隔6个确定一个x就好了。x的通项公式即为(i-1)*6+1</li>
+</ul>
+<h3 id="ac代码-25">AC代码</h3>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main()
+{
+    int n,k;
+    scanf(&quot;%d %d&quot;,&amp;n,&amp;k);
+    printf(&quot;%d\n&quot;,(n*6-1) * k);
+    for(int i = 1;i &lt;= n;i++)
+    {
+        int num = (i-1)*6+1;
+        printf(&quot;%d %d %d %d\n&quot;,num*k,(num+1)*k,(num+2)*k,(num+4)*k);
+    }
+    return 0;
+}</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Mac键盘符号和快捷键说明]]></title>
         <id>https://zyx006.github.io/post/mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming/</id>
         <link href="https://zyx006.github.io/post/mac-jian-pan-fu-hao-he-kuai-jie-jian-shuo-ming/">
         </link>
         <updated>2020-11-14T09:41:52.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>本文迁移自原生Github Pages</p>
-</blockquote>
-<p>⌘  Command<br>
-⇧  Shift<br>
-⇪  CapsLock<br>
-⌥  Option<br>
-⌃  Control</p>
-]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>本文迁移自原生Github Pages</p>
 </blockquote>
@@ -32,9 +1506,8 @@
 ⇧  Shift<br>
 ⇪  CapsLock<br>
 ⌥  Option<br>
-⌃  Control</p>
-<!-- more -->
-<p>↩  Return/Enter<br>
+⌃  Control<!-- more --><br>
+↩  Return/Enter<br>
 ⌫  Delete<br>
 ⌦  向前删除键(Fn + Delete)<br>
 ↑  上箭头<br>
